@@ -1,579 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Megaline Plan Revenue Analysis</title>
-    <style>
-        /* --- General Styles & Fonts --- */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+<div align="center">
 
-        :root {
-            --bg-color: #f8f9fa;
-            --container-bg: #ffffff;
-            --text-color: #343a40;
-            --heading-color: #212529;
-            --subtitle-color: #6c757d;
-            --primary-color: #20c997;
-            --primary-color-darker: #1a9e7a;
-            --secondary-color: #6c757d;
-            --secondary-color-darker: #5a6268;
-            --success-color: #28a745;
-            --warning-bg: #fff3cd;
-            --warning-border: #ffc107;
-            --warning-text: #856404;
-            --border-color-light: #e9ecef;
-            --border-color-medium: #dee2e6;
-            --border-color-dark: #ced4da;
-            --highlight-bg: #e9f9f5;
-            --code-bg: #e9ecef;
-            --hypothesis-bg: #f1f3f5;
-            --text-light: #ffffff;
-        }
+# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
 
-        body[data-theme='dark'] {
-            --bg-color: #121212;
-            --container-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --heading-color: #ffffff;
-            --subtitle-color: #a0a0a0;
-            --primary-color: #20c997;
-            --primary-color-darker: #1a9e7a;
-            --secondary-color: #888;
-            --secondary-color-darker: #aaa;
-            --warning-bg: #332701;
-            --warning-border: #ffc107;
-            --warning-text: #ffebb5;
-            --border-color-light: #2a2a2a;
-            --border-color-medium: #3a3a3a;
-            --border-color-dark: #4a4a4a;
-            --highlight-bg: #2a3b36;
-            --code-bg: #2a2a2a;
-            --hypothesis-bg: #252525;
-            --text-light: #ffffff;
-        }
+<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/">
+  <img src="assets/images/banner-megaline-analysis.png" 
+       alt="Veja a Página do Projeto" 
+       style="width: 100%; max-width: 800px; height: auto; border-radius: 20px; margin-top: 20px;" >
+</a>
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+<br>
 
-        .container { max-width: 900px; margin: 40px auto; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
-        header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
-        header h1 { font-size: 2.5em; font-weight: 700; color: var(--heading-color); margin-bottom: 0px; }
-        header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
-        
-        /* Class for banner image */
-        
-        .image {
-            width: 100%;
-            max-width: 550px;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 0px;
-        }
-        
-        /*.header-gif { max-width: 150px; border-radius: 8px; margin-bottom: 20px; }*/
-        .header-divider {
-            /* Removes the default browser border */
-            border: none; 
-            /* Sets the color and thickness of the line */
-            border-top: 1px solid #4d4b4b; /* Use a color that fits your theme, e.g., a light gray */
-            
-            /* ADD SPACE AROUND THE LINE (e.g., 10 pixels top and bottom) */
-            margin-top: 10px; 
-            margin-bottom: 10px;
-        }
-        .header-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: px }
-        .badges {margin-top: 20px}
-        .badges img { margin: 0 5px; }
-        .translate-button, .theme-button { background-color: var(--secondary-color); color: var(--text-light); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease; display: flex; align-items: center; gap: 8px; }
-        .icon-container svg { width: 16px; height: 16px; fill: currentColor; }
-        .translate-button:hover, .theme-button:hover { background-color: var(--secondary-color-darker); }
-        .section { margin-bottom: 35px; }
-        h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
-        ul.key-findings { list-style: none; padding-left: 0; }
-        ul.key-findings li { background-color: var(--highlight-bg); border-left: 4px solid var(--primary-color); padding: 15px; margin-bottom: 10px; border-radius: 5px; font-size: 1.05em; }
-        ul.key-findings li strong { color: var(--primary-color-darker); }
-        ol li { margin-bottom: 12px; }
-        .hypothesis { background-color: var(--hypothesis-bg); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid var(--border-color-dark); }
-        .hypothesis p { margin: 5px 0; }
-        code { font-family: 'Courier New', Courier, monospace; background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .tag { background-color: var(--primary-color); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
-        .note { background-color: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 20px; border-radius: 5px; }
-        .note h3 { margin-top: 0; color: var(--warning-text); }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: var(--text-light); padding: 12px 25px; text-align: center; text-decoration: none; font-size: 1.1em; font-weight: bold; border-radius: 8px; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-button:hover { background-color: var(--primary-color-darker); transform: translateY(-2px); }
-        .cta-buttons-container { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-        @media (max-width: 768px) { .container { padding: 20px; margin: 0px; } header h1 { font-size: 2em; } h2 { font-size: 1.5em; } .cta-buttons-container { flex-direction: column; } }
-        .cta-button-alt {
-            background-color: --primary-color:; /* Vibrant violet */
-            color: var(--text-light);      /* White text */
-        }
-        .cta-button-alt:hover {
-        background-color: #7122b9; /* Darker violet for hover */
-        }
+<details open>
+ <summary>
+  Tradução PT-BR
+ </summary>
+<div style="font-size: 1.2em;"><b><b>Análise de Receita dos Planos Telefônicos da Megaline:</b></b><br>Um Estudo Comparativo<br>(🏄🏻‍♂️ Surf X 👑Ultimate)</div>
+</details>
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+# 
 
-        .gallery-item {
-            border: 1px solid var(--border-color-medium);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
+<br>
 
-        .gallery-item img {
-            max-width: 100%;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .gallery-item p {
-            font-weight: bold;
-            margin-top: 0;
-            color: var(--heading-color);
-        }
-
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            padding-top: 100px; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.9); 
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .summary-text {
-            text-align: left;
-            margin-top: 15px;
-        }
-        .summary {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            color: var(--text-color);
-            font-size: 0.9em;
-            text-align: left;
-        }
-        .summary li:first-child {
-            font-weight: bold;
-            color: var(--heading-color);
-            font-size: 1.05em;
-        }
-        .modal-caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px 20px;
-            width: 80%;
-            max-width: 700px;
-            margin: auto;
-        }
-        #modalSummaryList {
-            list-style: disc;
-            padding-left: 40px; /* More padding for centering */
-            text-align: left;
-            display: inline-block; /* To center the block */
-        }
-        #modalSummaryList li {
-            margin-bottom: 10px;
-        }
-        #modalSummaryList li:first-child {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .collapsible {
-            background-color: var(--container-bg);
-            color: var(--heading-color);
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-top: 10px;
-            border-bottom: 2px solid var(--border-color-light);
-            transition: border-bottom 0.3s ease;
-        }
-
-        .collapsible:after {
-            content: '95'; /* Unicode character for "plus" sign (+) */
-            font-size: 13px;
-            color: var(--text-color);
-            float: right;
-            margin-left: 5px;
-        }
-
-        .collapsible.active:after {
-            content: "96"; /* Unicode character for "minus" sign (-) */
-        }
-
-        .content {
-            padding: 20px 0;
-            display: none;
-            overflow: hidden;
-            background-color: var(--container-bg);
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-        <header>
-            <img src="assets/images/banner-megaline-analysis.png" alt="Project Banner" class="image" >
-            
-            <div class="badges">
-                <img src="https://img.shields.io/badge/Language-Python-2485ba?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge">
-                <img src="https://img.shields.io/badge/Library-Pandas-143462?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas Badge">
-                <img src="https://img.shields.io/badge/Status-Completed-28a745?style=for-the-badge&logo=wakatime" alt="Status Badge: Completed">
-            </div>
+<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+Project Page<br><div style="font-size: 0.8em;">Página do Projeto</div>
+</a>
 
 
-            <h1 id="main-title">Ultimate Plan: The Clear Winner for Profitability</h1>
-            <p class="subtitle" id="subtitle">An analysis of 500 Megaline customers reveals the Ultimate plan generates more revenue and offers greater stability, making it the smarter investment for marketing efforts.</p>
+<br>
 
-            <div class="header-buttons">
+🔗 See the dynamic *GitHub Pages* of the project [**here**](https://eduardocornelsen.github.io/megaline-revenue-analysis/)
 
-                <button id="translateBtn" class="translate-button"><span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-2v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.62-1.23 4.96-3.1 6.39z"/></svg></span>
-                    <span id="translateBtnText">Translate to Portuguese</span></button>
+</center>
+</div>
 
-                <button id="themeToggleBtn" class="theme-button"><span id="themeIconContainer" class="icon-container"></span>
-                    <span id="themeBtnText">Toggle Theme</span></button>
-            </div>            
+---
 
-        </header>
+<details open>
+ <summary>
+ <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
+ </summary>
 
-        <div class="section">
-            <h2 id="objective-title">The Bottom Line: Focus on 'Ultimate'</h2>
-            <p id="objective-p1">Our analysis shows that while the 'Surf' plan has its moments, the <strong>'Ultimate' plan is the consistent breadwinner.</strong></p>
-            <p id="objective-p2">This report will walk you through the "why" behind this conclusion and provide the data to back it up.</p>
-        </div>
 
-        <div class="section">
-            <h2 id="findings-title">The Story in Three Parts</h2>
-            <ul class="key-findings">
-                <li id="finding-1"><strong>The 'Ultimate' plan brings in more money per user.</strong> It's a simple fact that forms the foundation of our story.</li>
-                <li id="finding-2"><strong>The 'Surf' plan is a wild card.</strong> Its revenue is unpredictable, relying on customers going over their limits. This makes it a riskier bet for steady income.</li>
-                <li id="finding-3"><strong>Location doesn't matter.</strong> We checked, and there's no significant revenue difference between users in the NY–NJ area and other regions. The story is the same everywhere.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2 id="eda-title">Let's Break Down the "Why"</h2>
-            <p id="eda-1-p">The following charts illustrate the key differences in user behavior and how they translate to revenue.</p>
-        </div>
+> [➡️ Ir para a versão em **Português-BR**](#análise-estratégica-de-receita-dos-planos-da-megaline)
 
-        <div class="section">
-            <button class="collapsible active">Revenue</button>
-            <div class="content" style="display: block;">
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <p id="gallery-title-1">Ultimate's Revenue is Higher & More Consistent</p>
-                        <img src="assets/images/monthly_revenue_by_plan.png" alt="Monthly Revenue by Plan">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-1">
-                                <li>The 'Ultimate' plan (in green) shows a clear and consistent lead in monthly revenue.</li>
-                                <li>The 'Surf' plan's revenue is more erratic, with occasional spikes from overage charges.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <p id="gallery-title-2">Total Revenue: The Big Picture</p>
-                        <img src="assets/images/plan_total_revenue.png" alt="Total Revenue by Plan">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-2">
-                                <li>When we look at the total revenue, the 'Ultimate' plan's contribution is significantly larger.</li>
-                                <li>This reinforces the idea that 'Ultimate' is the more profitable plan overall.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <p id="gallery-title-10">A Higher Average Revenue Per User</p>
-                        <img src="assets/images/user_mean_revenue_distribution_hist_box.png" alt="User Mean Revenue Distribution">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-10">
-                                <li>The average revenue from 'Ultimate' users is consistently higher.</li>
-                                <li>This tells us that, on an individual level, 'Ultimate' customers are more valuable.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <p id="gallery-title-8">A Tighter, More Predictable Revenue Stream</p>
-                        <img src="assets/images/monthly_avg_rev_box.png" alt="Monthly Average Revenue Distribution">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-8">
-                                <li>The revenue from 'Ultimate' users is tightly clustered, indicating a predictable income stream.</li>
-                                <li>'Surf' revenue is all over the place, making it harder to forecast.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <button class="collapsible active">Data Usage</button>
-            <div class="content" style="display: block;">
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <p id="gallery-title-4">'Surf' Users are Hitting Their Data Limits</p>
-                        <img src="assets/images/avg_gb_usage_month.png" alt="Average GB Usage per Month">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-4">
-                                <li>'Surf' users frequently go over their data allowance, which is a double-edged sword.</li>
-                                <li>While it generates overage fees, it also suggests they might be good candidates for an upgrade.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <p id="gallery-title-9">Data Usage is More Spread Out for 'Surf' Users</p>
-                        <img src="assets/images/monthly_gb_usage__box.png" alt="Monthly GB Usage Distribution">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-9">
-                                <li>The wide range of data usage for 'Surf' users is another sign of unpredictability.</li>
-                                <li>Many are either close to their limit or far beyond it.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div align='center'>
 
-            <button class="collapsible active">Calls & Messages</button>
-            <div class="content" style="display: block;">
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <p id="gallery-title-3">Calling Habits are Similar</p>
-                        <img src="assets/images/avg_call_dur_month_line.png" alt="Average Call Duration per Month">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-3">
-                                <li>There’s no significant difference in how much users of either plan talk on the phone.</li>
-                                <li>This tells us that call behavior isn't a major factor in the revenue difference.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <p id="gallery-title-7">'Ultimate' Users Send More Messages</p>
-                        <img src="assets/images/message_box_alt.png" alt="Messages Distribution">
-                        <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-7">
-                                <li>'Ultimate' users send more messages, likely because their plan includes a much larger allowance.</li>
-                                <li>However, this doesn't translate to a major revenue impact.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
 
-        
-        <div class="section">
-            <h2 id="methodology-title">Our Approach</h2>
-            <ol>
-                <li id="method-1"><strong>Data Cleaning:</strong> We started by cleaning and preparing the raw data to ensure accuracy.</li>
-                <li id="method-2"><strong>Feature Engineering:</strong> We created new features, like monthly revenue per user, to get a clearer picture of the data.</li>
-                <li id="method-3"><strong>Exploratory Data Analysis (EDA):</strong> We used visualizations to explore the data and uncover the story.</li>
-                <li id="method-4"><strong>Statistical Testing:</strong> We used hypothesis testing to confirm our findings and ensure they weren't just due to chance.</li>
-            </ol>
-        </div>
+</div>
 
-        <div class="section">
-            <h2 id="tech-title">The Tools We Used</h2>
-            <div class="tech-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">Seaborn</span>
-                <span class="tag">SciPy</span>
-                <span class="tag">Jupyter Notebook</span>
-            </div>
-        </div>
-        
-        <div class="section note">
-             <h3 id="reproducibility-title">A Note on the Data</h3>
-             <p id="reproducibility-p">This project was completed using proprietary datasets. While the notebook isn't directly runnable, the repository contains all the code and visualizations for a complete review of the analysis.</p>
-        </div>
-        
-        <div class="section cta-section" style="text-align: center;">
-            <h2 id="cta-title">Want to Dig Deeper?</h2>
-            <p id="cta-p">The full analysis, including all the code and step-by-step methodology, is available in the project repository. This is your chance to see the "how" behind the "what."</p>
+# ADICIONAR
+- Teste de hipóteses
+- Gráficos
+- Acionáveis que dariam para ser utilizados com o que aprendi
+- Próximos passos
+- Gráfico, teste de hipóteses
 
-            <div class="cta-buttons-container">
-                <a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" class="cta-button cta-button-alt" id="cta-button-notebook">Open in Collab</a>
-                <a href="https://github.com/eduardocornelsen/megaline-revenue-analysis/blob/main/notebooks/megaline-revenue-eda.ipynb" class="cta-button cta-button-alt" id="cta-btn-github">View on GitHub</a>
-            </div>
-        </div>
-    </div>
 
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="modalCaption" class="modal-caption">
-            <ul id="modalSummaryList"></ul>
-        </div>
-    </div>
 
-    <script>
-        const translations = {
-            'pt': {
-                'main-title': "Plano Ultimate: O Vencedor Indiscutível em Lucratividade",
-                'subtitle': "Uma análise de 500 clientes da Megaline revela que o plano Ultimate gera mais receita e oferece maior estabilidade, tornando-se o investimento mais inteligente para os esforços de marketing.",
-                'objective-title': "O Resumo: Foco no 'Ultimate'",
-                'objective-p1': "Nossa análise mostra que, embora o plano 'Surf' tenha seus méritos, o <strong>plano 'Ultimate' é o carro-chefe consistente.</strong>",
-                'objective-p2': "Este relatório irá guiá-lo pelo 'porquê' por trás desta conclusão e fornecer os dados para apoiá-la.",
-                'findings-title': "A História em Três Partes",
-                'finding-1': "<strong>O plano 'Ultimate' gera mais dinheiro por usuário.</strong> É um fato simples que forma a base da nossa história.",
-                'finding-2': "<strong>O plano 'Surf' é uma incógnita.</strong> Sua receita é imprevisível, dependendo de clientes que ultrapassam seus limites. Isso o torna uma aposta mais arriscada para uma renda estável.",
-                'finding-3': "<strong>A localização não importa.</strong> Verificamos e não há diferença significativa de receita entre os usuários da área de NY-NJ e outras regiões. A história é a mesma em todos os lugares.",
-                'eda-title': "Vamos Detalhar o 'Porquê'",
-                'eda-1-p': "Os gráficos a seguir ilustram as principais diferenças no comportamento do usuário e como elas se traduzem em receita.",
-                'gallery-title-1': "A Receita do 'Ultimate' é Maior e Mais Consistente",
-                'gallery-summary-1': "<li>O plano 'Ultimate' (em verde) mostra uma liderança clara e consistente na receita mensal.</li><li>A receita do plano 'Surf' é mais irregular, com picos ocasionais de cobranças excedentes.</li>",
-                'gallery-title-2': "Receita Total: O Cenário Geral",
-                'gallery-summary-2': "<li>Quando olhamos para a receita total, a contribuição do plano 'Ultimate' é significativamente maior.</li><li>Isso reforça a ideia de que o 'Ultimate' é o plano mais lucrativo no geral.</li>",
-                'gallery-title-10': "Uma Receita Média por Usuário Mais Alta",
-                'gallery-summary-10': "<li>A receita média dos usuários 'Ultimate' é consistentemente maior.</li><li>Isso nos diz que, em nível individual, os clientes 'Ultimate' são mais valiosos.</li>",
-                'gallery-title-8': "Um Fluxo de Receita Mais Estável e Previsível",
-                'gallery-summary-8': "<li>A receita dos usuários 'Ultimate' está firmemente agrupada, indicando um fluxo de renda previsível.</li><li>A receita do 'Surf' está por toda parte, tornando mais difícil a previsão.</li>",
-                'gallery-title-4': "Usuários 'Surf' Estão Atingindo Seus Limites de Dados",
-                'gallery-summary-4': "<li>Os usuários 'Surf' frequentemente ultrapassam sua franquia de dados, o que é uma faca de dois gumes.</li><li>Embora gere taxas de excedente, também sugere que eles podem ser bons candidatos para um upgrade.</li>",
-                'gallery-title-9': "O Uso de Dados é Mais Disperso para Usuários 'Surf'",
-                'gallery-summary-9': "<li>A ampla gama de uso de dados para usuários 'Surf' é outro sinal de imprevisibilidade.</li><li>Muitos estão próximos do limite ou muito além dele.</li>",
-                'gallery-title-3': "Os Hábitos de Chamada são Semelhantes",
-                'gallery-summary-3': "<li>Não há diferença significativa em quanto os usuários de cada plano falam ao telefone.</li><li>Isso nos diz que o comportamento de chamada não é um fator importante na diferença de receita.</li>",
-                'gallery-title-7': "Usuários 'Ultimate' Enviam Mais Mensagens",
-                'gallery-summary-7': "<li>Os usuários 'Ultimate' enviam mais mensagens, provavelmente porque seu plano inclui uma franquia muito maior.</li><li>No entanto, isso não se traduz em um grande impacto na receita.</li>"
-            }
-        };
+## 📋 Project Summary
 
-        const originalTexts = {};
-        let currentLanguage = 'en';
-        const themeIconContainer = document.getElementById('themeIconContainer');
-        const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.64 5.64c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L5.64 5.64zm12.72 12.72c-.39-.39-1.02-.39-1.41 0-.39.39-.39-1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.06-1.06zM5.64 18.36l-1.06-1.06c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.06 1.06c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zM19.42 6.01c.39-.39.39-1.02 0-1.41l-1.06-1.06c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0z"/></svg>`;
-        const moonIcon = `<svg xmlns="http://wwwwww.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>`;
+This project presents a comprehensive analysis of customer data for **Megaline**, a telecom provider, to determine which of its two prepaid plans—**Surf** or **Ultimate**—is more profitable. The primary goal is to provide data-driven insights that can guide the company's future marketing budget allocation.
 
-        function updateTheme(theme) {
-            document.body.setAttribute('data-theme', theme);
-            themeIconContainer.innerHTML = theme === 'dark' ? moonIcon : sunIcon;
-            localStorage.setItem('theme', theme);
-        }
+The analysis is based on a 2018 dataset covering the usage patterns of 500 clients, focusing on their call, text, and data consumption. The process involved data cleaning, feature engineering, exploratory data analysis, and statistical hypothesis testing to compare the revenue streams from both plans.
+<br>
 
-        document.getElementById('themeToggleBtn').addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme') || 'light';
-            updateTheme(currentTheme === 'dark' ? 'light' : 'dark');
-        });
+## 💡 Key Findings & Business Insights
 
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            if (lang === 'en') {
-                for (const id in originalTexts) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.innerHTML = originalTexts[id];
-                    }
-                }
-            } else {
-                const translationSet = translations[lang];
-                for (const id in translationSet) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.innerHTML = translationSet[id];
-                    }
-                }
-            }
-        }
+* **Higher Average Revenue:** The **'Ultimate'** plan consistently generates a higher average revenue per user (ARPU).
+* **Revenue Volatility:** The **'Surf'** plan's revenue is more unpredictable, primarily driven by customers who frequently exceed their plan limits and incur significant overage charges.
+* **No Regional Impact:** Statistical tests showed no significant difference in revenue generated from users in the NY–NJ metropolitan area compared to those in other regions.
+* **Actionable Recommendation:** To maximize revenue and ensure predictability, marketing efforts should focus on promoting the **'Ultimate'** plan to attract and retain high-value customers.
 
-        document.getElementById('translateBtn').addEventListener('click', () => {
-            setLanguage(currentLanguage === 'en' ? 'pt' : 'en');
-        });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const allIds = new Set(Object.keys(translations.pt));
-             allIds.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) originalTexts[id] = element.innerHTML;
-            });
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            updateTheme(savedTheme);
+## 🛠️ Technical Approach & Tools
 
-            // Modal functionality
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
-            var modalSummaryList = document.getElementById("modalSummaryList");
-            var images = document.querySelectorAll(".gallery-item img");
-            images.forEach(image => {
-                image.onclick = function(){
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                    const summaryList = this.parentElement.querySelector('.summary');
-                    modalSummaryList.innerHTML = summaryList.innerHTML;
-                }
-            });
+My analytical process followed these key steps:
+* **Data Wrangling & Preprocessing:** Cleaned and transformed raw usage data using **Python**, **Pandas**, and **NumPy**.
+* **Feature Engineering:** Created new variables, such as monthly revenue per user, by aggregating calls, messages, and data usage into a single, cohesive dataset.
+* **Exploratory Data Analysis (EDA):** Generated visualizations with **Matplotlib** and **Seaborn** to uncover trends in user behavior and revenue distributions.
+* **Statistical Testing:** Conducted formal hypothesis tests using the **SciPy** library to statistically validate the differences in revenue between the plans.
 
-            var span = document.getElementsByClassName("close")[0];
+The entire analysis is documented in a **Jupyter Notebook**.
 
-            span.onclick = function() { 
-                modal.style.display = "none";
-            }
 
-            // Collapsible functionality
-            var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                  this.style.borderBottom = "2px solid var(--border-color-light)";
-                } else {
-                  content.style.display = "block";
-                  this.style.borderBottom = "none";
-                }
-              });
-            }
-        });
-    </script>
-</body>
-</html>
+## 📂 Project Files
+
+* `megaline_revenue_eda.ipynb`: The complete Jupyter Notebook containing all steps, from data loading and cleaning to analysis, visualization, and statistical conclusions.
+* `README.md`: This summary file.
+
+
+### 📝 Note on Data Availability
+
+The dataset for this analysis was provided by the TripleTen platform and is proprietary. Therefore, the code in the notebook cannot be run locally without access to the original data files. However, all outputs, tables, and visualizations have been preserved within the notebook for a complete review of the methodology and results.
+
+<br>
+
+---
+
+<div align='center'>
+
+## 🚀 **Explore the Notebook**
+
+<a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+[Open in Collab](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing)
+</a>
+
+</div>
+
+<br>
+
+
+
+<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+[[See on GitHub](https://github.com/eduardocornelsen/megaline-revenue-analysis/blob/main/notebooks/megaline-revenue-eda.ipynb)
+</a>
+
+<br><br>
+
+</details>
+
+<br>
+
+---
+
+<br>
+
+<details open>
+ <summary>
+ <b style="font-size: 1.4em;">2. 🇧🇷 Versão em Português - BR</b>
+ </summary>
+ 
+<br>
+
+> 🇬🇧 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-english-version)
+
+<center>
+
+# **Análise Estratégica de Receita dos Planos da Megaline**:<br> Um Estudo Comparativo<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
+
+</center>
+
+
+
+## 📋 Resumo do Projeto
+
+Este projeto apresenta uma análise completa dos dados de clientes da **Megaline**, uma operadora de telecomunicações, para determinar qual de seus dois planos pré-pagos — **Surf** ou **Ultimate** — é mais lucrativo. O objetivo principal é fornecer insights baseados em dados que possam orientar a alocação do orçamento de marketing da empresa.
+
+A análise foi baseada em um conjunto de dados de 2018 que cobre os padrões de uso de 500 clientes, com foco no consumo de chamadas, mensagens e internet. O processo incluiu limpeza de dados, engenharia de features, análise exploratória e testes de hipóteses estatísticas para comparar as fontes de receita de ambos os planos.
+
+
+## 💡 Principais Descobertas e Insights de Negócio
+
+* **Receita Média Superior:** O plano **'Ultimate'** gera consistentemente uma maior receita média por usuário (ARPU).
+* **Volatilidade da Receita:** A receita do plano **'Surf'** é mais imprevisível, impulsionada principalmente por clientes que frequentemente excedem os limites do plano e incorrem em cobranças de excedentes significativas.
+* **Sem Impacto Regional:** Os testes estatísticos não mostraram diferença significativa na receita gerada por usuários da área metropolitana de NY–NJ em comparação com os de outras regiões.
+* **Recomendação Prática:** Para maximizar a receita e garantir previsibilidade, os esforços de marketing devem se concentrar na promoção do plano **'Ultimate'** para atrair e reter clientes de alto valor.
+
+
+## 🛠️ Abordagem Técnica e Ferramentas
+
+Meu processo analítico seguiu estas etapas principais:
+* **Tratamento e Pré-processamento de Dados:** Limpeza e transformação dos dados brutos de uso utilizando **Python**, **Pandas** e **NumPy**.
+* **Engenharia de Features:** Criação de novas variáveis, como a receita mensal por usuário, agregando dados de chamadas, mensagens e internet em um único dataset coeso.
+* **Análise Exploratória de Dados (AED):** Geração de visualizações com **Matplotlib** e **Seaborn** para descobrir tendências no comportamento do usuário e na distribuição de receita.
+* **Testes Estatísticos:** Condução de testes de hipóteses formais com a biblioteca **SciPy** para validar estatisticamente as diferenças de receita entre os planos.
+
+Toda a análise está documentada em um **Jupyter Notebook**.
+
+
+
+## 📂 Arquivos do Projeto
+
+* `megaline_plan_analysis_portfolio_FINAL_clean.ipynb`: O Jupyter Notebook completo, contendo todas as etapas, desde o carregamento e limpeza dos dados até a análise, visualização e conclusões estatísticas.
+* `README.md`: Este arquivo de resumo.
+
+
+<div class='info'>
+
+### 📝 Nota sobre a Disponibilidade dos Dados
+
+O conjunto de dados para esta análise foi fornecido pela plataforma TripleTen e é proprietário. Portanto, o código no notebook não pode ser executado localmente sem acesso aos arquivos de dados originais. No entanto, todos os resultados, tabelas e visualizações foram preservados no notebook para uma revisão completa da metodologia e dos resultados.
+
+<br>
+
+---
+
+<div align='center'>
+
+## 🚀 **Explore o Notebook**
+
+
+<a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+Abrir no Collab
+</a>
+
+
+<br>
+
+
+
+<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+Ver no GitHub
+</a>
+
+</div>
+
+</details>
+
