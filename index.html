@@ -414,7 +414,105 @@
             </div>
         </div>
 
-        
+
+<!-- INÍCIO DOS RESULTADOS DETALHADOS -->
+
+<div class="section">
+    <!-- Título da Seção -->
+    <h2 id="hypothesis-title">Statistical Testing: Putting the Numbers to the Test</h2>
+    
+    <!-- Introdução Narrativa -->
+    <p id="hypothesis-intro">After seeing the vivid differences in revenue distributions—the 'Ultimate' plan's tight, reliable earnings versus the 'Surf' plan's chaotic reliance on overage fees—our eyes told one story. But in data science, we can't trust just our eyes. We need to confront the numbers with a definitive statistical challenge.<br><br>
+
+    The primary question hanging over our marketing strategy was: <br><b><i>Is the revenue difference we observed between the 'Surf' and 'Ultimate' plans real, or is it just a lucky fluke of sampling?</b></i></p>
+</div>
+
+<!-- INÍCIO DOS RESULTADOS DETALHADOS -->
+
+<div class="section">
+    <h3>1. The Revenue Verdict: The Gap is Real and Stable</h3>
+    
+    <p>We applied a two-sample Welch's t-test ('alpha' = 0.05) to confront the averages:</p>
+
+    <!-- PURE HTML TABLE FIX -->
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left;">
+        <thead>
+            <tr style="border-bottom: 2px solid var(--border-color-dark);">
+                <th style="padding: 10px;">Plan</th>
+                <th style="padding: 10px;">Average Monthly Revenue (x̄)</th>
+                <th style="padding: 10px;">Volatility (σ)</th>
+                <th style="padding: 10px;">The Crucial Takeaway</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: var(--highlight-bg);">
+                <td style="padding: 10px;"><b>👑 Ultimate</b></td>
+                <td style="padding: 10px;"><b>$70.00</b></td>
+                <td style="padding: 10px;"><b>$0.00</b></td>
+                <td style="padding: 10px;"><b>Perfectly stable and predictable revenue.</b></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color-light);">
+                <td style="padding: 10px;"><b>🏄🏻‍♂️ Surf</b></td>
+                <td style="padding: 10px;"><b>$57.52</b></td>
+                <td style="padding: 10px;"><b>$43.47</b></td>
+                <td style="padding: 10px;">High volatility, heavily reliant on overage fees.</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- END PURE HTML TABLE -->
+
+    <p style="margin-top: 20px;">The test resulted in a <b>p-value essentially equal to zero</b> <i> (approx 2.24e^{-7}).</i></p>
+    
+    <h4>Conclusion on Revenue:</h4>
+    <ul>
+        <li>✅ We <b>rejected the Null Hypothesis.</b></li>
+        <li>There is <b>overwhelming statistical certainty</b> that the superior profitability of the 'Ultimate' plan is not random. The <b>$0.00$ volatility</b> highlights its financial stability.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h3>2. The Location Verdict: Geography is Not a Factor</h3>
+    
+    <p>We tested if the high-density <b>NY–NJ metropolitan area</b> generates statistically different revenue compared to all other regions.</p>
+
+    <!-- PURE HTML TABLE FIX (Second Table) -->
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left;">
+        <thead>
+            <tr style="border-bottom: 2px solid var(--border-color-dark);">
+                <th style="padding: 10px;">Region</th>
+                <th style="padding: 10px;">Average Monthly Revenue (x̄)</th>
+                <th style="padding: 10px;">Desvio Padrão (σ)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: var(--highlight-bg);">
+                <td style="padding: 10px;"><b>🗽 NY-NJ</b></td>
+                <td style="padding: 10px;">$59.53</td>
+                <td style="padding: 10px;">$32.24</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color-light);">
+                <td style="padding: 10px;"><b>🌍 Other Regions</b></td>
+                <td style="padding: 10px;">$61.92</td>
+                <td style="padding: 10px;">$36.99</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- END PURE HTML TABLE -->
+
+    <p style="margin-top: 20px;">The test returned a <b>p-value of $0.5894</b> (far above $\alpha = 0.05$).</p>
+
+    <h4>Conclusion on Location:</h4>
+    <ul>
+        <li>❌ We <b>failed to reject the Null Hypothesis.</b></li>
+        <li>There is <b>no statistical evidence</b> to suggest that average revenue differs based on geography. Marketing efforts should <b>focus solely on plan type.</b></li>
+    </ul>
+</div>
+
+<div class="section">
+    <h3>Final Story Conclusion</h3>
+    <p>Our Exploratory Analysis pointed to the differences, but the Hypothesis Test provided the <strong>certainty</strong>. By confronting the <strong>Ultimate plan's flawless predictability ($70.00)</strong> against the <strong>Surf plan's high volatility ($57.52)</strong>, the statistical evidence was overwhelming: the <strong>profitability gap is real and highly significant</strong>. The mandate is clear: the <strong>Ultimate plan is the financially superior and most stable asset</strong> for Megaline.</p>
+</div>
+
         <div class="section">
             <h2 id="methodology-title">Our Approach</h2>
             <ol>
@@ -422,6 +520,7 @@
                 <li id="method-2"><strong>Feature Engineering:</strong> We created new features, like monthly revenue per user, to get a clearer picture of the data.</li>
                 <li id="method-3"><strong>Exploratory Data Analysis (EDA):</strong> We used visualizations to explore the data and uncover the story.</li>
                 <li id="method-4"><strong>Statistical Testing:</strong> We used hypothesis testing to confirm our findings and ensure they weren't just due to chance.</li>
+                
             </ol>
         </div>
 
