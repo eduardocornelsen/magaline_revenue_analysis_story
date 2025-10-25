@@ -2,7 +2,7 @@
 
 # **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
 
-<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/">
+<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis_story/">
   <img src="assets/images/banner-megaline-analysis.png" 
        alt="Veja a Página do Projeto" 
        style="width: 100%; max-width: 800px; height: auto; border-radius: 20px; margin-top: 20px;" >
@@ -21,14 +21,14 @@
 
 <br>
 
-<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
+<a href="https://eduardocornelsen.github.io/megaline_revenue_analysis_story/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
 Project Page<br><div style="font-size: 0.8em;">Página do Projeto</div>
 </a>
 
 
 <br>
 
-🔗 See the dynamic *GitHub Pages* of the project [**here**](https://eduardocornelsen.github.io/megaline-revenue-analysis/)
+🔗 See the dynamic *GitHub Pages* of the project [**here**](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
 </center>
 </div>
