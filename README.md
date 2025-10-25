@@ -30,7 +30,6 @@ Project Page<br><div style="font-size: 0.8em;">Página do Projeto</div>
 
 🔗 See the dynamic *GitHub Pages* of the project [**here**](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
-</center>
 </div>
 
 ---
