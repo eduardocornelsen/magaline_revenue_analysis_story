@@ -35,7 +35,7 @@
             --bg-color: #121212;
             --container-bg: #1e1e1e;
             --text-color: #e0e0e0;
-            --heading-color: #ffffff;
+            --heading-color: #20c997;
             --subtitle-color: #a0a0a0;
             --primary-color: #20c997;
             --primary-color-darker: #1a9e7a;
@@ -65,7 +65,7 @@
 
         .container { max-width: 900px; margin: 40px auto; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
         header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
-        header h1 { font-size: 2.5em; font-weight: 700; color: var(--heading-color); margin-bottom: 0px; }
+        header h1 { font-size: 2.5em; font-weight: 700; color: var(--primary-color-darker); margin-bottom: 0px; }
         header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
         
         /* Class for banner image */
@@ -96,7 +96,7 @@
         .icon-container svg { width: 16px; height: 16px; fill: currentColor; }
         .translate-button:hover, .theme-button:hover { background-color: var(--secondary-color-darker); }
         .section { margin-bottom: 35px; }
-        h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
+        h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color-darker); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
         ul.key-findings { list-style: none; padding-left: 0; }
         ul.key-findings li { background-color: var(--highlight-bg); border-left: 4px solid var(--primary-color); padding: 15px; margin-bottom: 10px; border-radius: 5px; font-size: 1.05em; }
         ul.key-findings li strong { color: var(--primary-color-darker); }
@@ -122,7 +122,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 20px;
         }
 
@@ -323,7 +323,7 @@
                         <img src="assets/images/monthly_revenue_by_plan.png" alt="Monthly Revenue by Plan">
                         <div class="summary-text">
                             <ul class="summary" id="gallery-summary-1">
-                                <li>The 'Ultimate' plan (in green) shows a clear and consistent lead in monthly revenue.</li>
+                                <li>The 'Ultimate' plan (in red) shows a clear and consistent lead in monthly revenue.</li>
                                 <li>The 'Surf' plan's revenue is more erratic, with occasional spikes from overage charges.</li>
                             </ul>
                         </div>
