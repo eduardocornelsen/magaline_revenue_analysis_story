@@ -2,7 +2,7 @@
 
 # **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
 
-<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis_story/">
+<a href="https://eduardocornelsen.github.io/megaline_revenue_analysis_story/">
   <img src="assets/images/banner-megaline-analysis.png" 
        alt="Veja a Página do Projeto" 
        style="width: 100%; max-width: 800px; height: auto; border-radius: 20px; margin-top: 20px;" >
