@@ -83,7 +83,7 @@ The entire analysis is documented in a **Jupyter Notebook**.
 >
 > The dataset for this analysis was provided by the TripleTen platform and is proprietary. Therefore, the code in the notebook cannot be run locally without access to the original data files. However, all outputs, tables, and visualizations have been preserved within the notebook for a complete review of the methodology and results.
 
-***
+---
 
 <div align='center'>
 
@@ -167,11 +167,11 @@ Toda a análise está documentada em um **Jupyter Notebook**.
 * **Análise de Churn (Rotatividade):** Realizar uma **análise de sobrevivência** para comparar as taxas de retenção de clientes e o valor do tempo de vida (LTV) dos planos 'Surf' e 'Ultimate'. Um plano de alta receita é significativamente mais valioso se também possuir uma menor taxa de churn.
 
 
-***
+---
 
 <div align='center'>
 
-## 🚀 **Explore o Notebook**
+## 🚀 **Explore o Projeto**
 
 [![Ver Project](https://img.shields.io/badge/Ver%20Projeto-a53825?style=for-the-badge&logo=rocket&logoColor=FFFFFF)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
