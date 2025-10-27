@@ -18,32 +18,25 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
 ***
 
 ## **Description:**
- <summary>
- <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
- </summary>
-
-> [➡️ Ir para a versão em **Português-BR**](#análise-estratégica-de-receita-dos-planos-da-megaline)
- 
-> [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#analise-estrategica-de-receita-dos-planos-da-megaline)
-
-### 📌 Table of Contents
-1.  [Project Summary](#project-summary)
-2.  [Key Findings & Business Insights](#key-findings-business-insights)
-3.  [Technical Approach & Tools](#technical-approach-tools)
-4.  [Project Files](#project-files)
-5.  [Next Steps](#next-steps)
-
-<br>
-
 
 <details>
  <summary>
  <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
  </summary>
 
-> [➡️ Ir para a versão em **Português-BR**](#análise-estratégica-de-receita-dos-planos-da-megaline)
+> [➡️ Ir para a versão em **Português-BR**](#an%C3%A1lise-estrat%C3%A9gica-de-receita-dos-planos-da-megaline-um-estudo-comparativo-surf-x-ultimate)
  
-> [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#analise-estrategica-de-receita-dos-planos-da-megaline)
+> [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#an%C3%A1lise-estrat%C3%A9gica-de-receita-dos-planos-da-megaline-um-estudo-comparativo-surf-x-ultimate)
+
+
+### 📌 Table of Contents
+1.  [Project Summary](#-project-summary)
+2.  [Key Findings & Business Insights](#-key-findings--business-insights)
+3.  [Technical Approach & Tools](#%EF%B8%8F-technical-approach--tools)
+4.  [Project Files](#-project-files)
+5.  [Next Steps](#%EF%B8%8F-next-steps)
+
+<br>
 
 # **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study (Surf X Ultimate)
 
@@ -115,10 +108,18 @@ The entire analysis is documented in a **Jupyter Notebook**.
  
 <br>
 
-> [![ENGLISH VERSION](https://img.shields.io/badge/🇺🇸%20ENGLISH%20VERSION-333?style=for-the-badge&logoColor=white)](#strategic-revenue-analysis-of-megalines-mobile-plans)
+> [![ENGLISH VERSION](https://img.shields.io/badge/🇺🇸%20ENGLISH%20VERSION-333?style=for-the-badge&logoColor=white)](#strategic-revenue-analysis-of-megalines-mobile-plans-a-comparative-study-surf-x-ultimate)
 > 
-> 🇺🇸 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-english-version)
+> 🇺🇸 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-a-comparative-study-surf-x-ultimate)
 
+### 📌 Índice
+1.  [Resumo do Projeto](#-resumo-do-projeto)
+2.  [Principais Descobertas e Insights de Negócio](#-principais-descobertas-e-insights-de-neg%C3%B3cio)
+3.  [Abordagem Técnica e Ferramentas](#%EF%B8%8F-abordagem-t%C3%A9cnica-e-ferramentas)
+4.  [Arquivos do Projeto](#-arquivos-do-projeto)
+5.  [Próximos Passos](#%EF%B8%8F-pr%C3%B3ximos-passos)
+
+<br>
 
 # **Análise Estratégica de Receita dos Planos da Megaline**:<br> Um Estudo Comparativo (Surf X Ultimate)
 
