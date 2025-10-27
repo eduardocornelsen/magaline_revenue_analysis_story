@@ -65,14 +65,16 @@ The entire analysis is documented in a **Jupyter Notebook**.
 
 ## ⏭️ Next Steps
 
-* More plots and insightful analysis
+* **Deploy an Interactive Dashboard:** Build and deploy an interactive **Streamlit dashboard**. This will operationalize the findings, allowing the marketing team to dynamically filter revenue and usage patterns by region and customer segment, moving beyond a static report.
+* **Predictive Modeling for Upgrades:** Develop a **classification model** (e.g., Logistic Regression) to identify 'Surf' plan customers who have the highest likelihood of **upgrading to 'Ultimate'**. This would create a targeted, high-ROI audience list for the marketing department.
+* **Conduct Churn Analysis:** Perform a **survival analysis** to compare the customer retention rates and lifetime value (LTV) of the 'Surf' and 'Ultimate' plans. A high-revenue plan is significantly more valuable if it also has a lower churn rate.
 
   
 > ### ℹ️ Note on Data Availability
 >
 > The dataset for this analysis was provided by the TripleTen platform and is proprietary. Therefore, the code in the notebook cannot be run locally without access to the original data files. However, all outputs, tables, and visualizations have been preserved within the notebook for a complete review of the methodology and results.
 
----
+***
 
 <div align='center'>
 
@@ -143,7 +145,14 @@ Toda a análise está documentada em um **Jupyter Notebook**.
 > preservados no notebook para uma revisão completa da metodologia e dos resultados.
 
 
----
+## ⏭️ Próximos Passos
+
+* **Implementar um Dashboard Interativo:** Construir e implantar um dashboard interativo com **Streamlit**. Isso irá operacionalizar os resultados, permitindo que a equipe de marketing filtre dinamicamente os padrões de receita e uso por região e segmento de cliente, indo além de um relatório estático.
+* **Modelagem Preditiva para Upgrades:** Desenvolver um **modelo de classificação** (ex: Regressão Logística) para identificar clientes do plano 'Surf' com maior probabilidade de **migrar para o 'Ultimate'**. Isso criaria uma lista de público-alvo de alto ROI para o departamento de marketing.
+* **Análise de Churn (Rotatividade):** Realizar uma **análise de sobrevivência** para comparar as taxas de retenção de clientes e o valor do tempo de vida (LTV) dos planos 'Surf' e 'Ultimate'. Um plano de alta receita é significativamente mais valioso se também possuir uma menor taxa de churn.
+
+
+***
 
 <div align='center'>
 
