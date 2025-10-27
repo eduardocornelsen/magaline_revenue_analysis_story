@@ -1,6 +1,6 @@
 <div align="center">
   
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Numpy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-444876?style=for-the-badge&logo=kubernetes&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-9f0000?style=for-the-badge&logo=streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Numpy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![SciPy](https://img.shields.io/badge/SciPy-8991EC?style=for-the-badge&logo=scipy&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-444876?style=for-the-badge&logo=kubernetes&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-9f0000?style=for-the-badge&logo=streamlit&logoColor=white)
 
   
 # **Strategic Revenue Analysis of Megaline's Mobile Plans**: A Comparative Study
