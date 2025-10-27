@@ -24,8 +24,6 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
  <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
  </summary>
 
-> [➡️ Ir para a versão em **Português-BR**](#an%C3%A1lise-estrat%C3%A9gica-de-receita-dos-planos-da-megaline-um-estudo-comparativo-surf-x-ultimate)
- 
 > [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#an%C3%A1lise-estrat%C3%A9gica-de-receita-dos-planos-da-megaline-um-estudo-comparativo-surf-x-ultimate)
 
 
@@ -109,8 +107,6 @@ The entire analysis is documented in a **Jupyter Notebook**.
 <br>
 
 > [![ENGLISH VERSION](https://img.shields.io/badge/🇺🇸%20ENGLISH%20VERSION-333?style=for-the-badge&logoColor=white)](#strategic-revenue-analysis-of-megalines-mobile-plans-a-comparative-study-surf-x-ultimate)
-> 
-> 🇺🇸 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-a-comparative-study-surf-x-ultimate)
 
 ### 📌 Índice
 1.  [Resumo do Projeto](#-resumo-do-projeto)
