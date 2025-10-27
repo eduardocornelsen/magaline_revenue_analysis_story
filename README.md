@@ -18,7 +18,7 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
 
 ## **Description:**
 
-<details open>
+<details>
  <summary>
  <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
  </summary>
