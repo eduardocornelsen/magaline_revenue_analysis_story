@@ -1,6 +1,7 @@
 <div align="center">
   
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Numpy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-444876?style=for-the-badge&logo=kubernetes&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-9f0000?style=for-the-badge&logo=streamlit&logoColor=white)
+
   
 # **Strategic Revenue Analysis of Megaline's Mobile Plans**: A Comparative Study
 
@@ -17,6 +18,23 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
 ***
 
 ## **Description:**
+ <summary>
+ <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
+ </summary>
+
+> [➡️ Ir para a versão em **Português-BR**](#análise-estratégica-de-receita-dos-planos-da-megaline)
+ 
+> [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#analise-estrategica-de-receita-dos-planos-da-megaline)
+
+### 📌 Table of Contents
+1.  [Project Summary](#project-summary)
+2.  [Key Findings & Business Insights](#key-findings-business-insights)
+3.  [Technical Approach & Tools](#technical-approach-tools)
+4.  [Project Files](#project-files)
+5.  [Next Steps](#next-steps)
+
+<br>
+
 
 <details>
  <summary>
