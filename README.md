@@ -14,7 +14,9 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
 
 </div>
 
----
+***
+
+## **Description:**
 
 <details open>
  <summary>
