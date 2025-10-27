@@ -1,34 +1,16 @@
 <div align="center">
+  
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Numpy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-444876?style=for-the-badge&logo=kubernetes&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-9f0000?style=for-the-badge&logo=streamlit&logoColor=white)
+  
+# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study
 
-# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
+This project provides a **detailed, comparative revenue analysis** of Megaline's 'Surf' and 'Ultimate' mobile plans, identifying key user behaviors to inform targeted marketing and **optimize the company's financial strategy**.
 
-<a href="https://eduardocornelsen.github.io/megaline_revenue_analysis_story/">
-  <img src="assets/images/banner-megaline-analysis.png" 
-       alt="Veja a Página do Projeto" 
-       style="width: 100%; max-width: 800px; height: auto; border-radius: 20px; margin-top: 20px;" >
-</a>
+[![banner-megaline-analysis-600px](https://github.com/user-attachments/assets/6b4319ed-bd83-41ec-8035-dc2c47fa51a4)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
-<br>
+[![View Project](https://img.shields.io/badge/View%20Project-a53825?style=for-the-badge&logo=rocket&logoColor=FFFFFF)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
-<details open>
- <summary>
-  Tradução PT-BR
- </summary>
-<div style="font-size: 1.2em;"><b><b>Análise de Receita dos Planos Telefônicos da Megaline:</b></b><br>Um Estudo Comparativo<br>(🏄🏻‍♂️ Surf X 👑Ultimate)</div>
-</details>
-
-# 
-
-<br>
-
-<a href="https://eduardocornelsen.github.io/megaline_revenue_analysis_story/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
-Project Page<br><div style="font-size: 0.8em;">Página do Projeto</div>
-</a>
-
-
-<br>
-
-🔗 See the dynamic *GitHub Pages* of the project [**here**](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
+[![View Dashboard](https://img.shields.io/badge/View%20Dashboard-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)](https://example.com) [![Open in Colab](https://img.shields.io/badge/Open%20in%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=FFFFFF)](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing) [![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eduardocornelsen/megaline_revenue_analysis_story)
 
 </div>
 
@@ -39,24 +21,11 @@ Project Page<br><div style="font-size: 0.8em;">Página do Projeto</div>
  <b style="font-size: 1.4em;">1. 🇺🇸 English Version</b>
  </summary>
 
-
 > [➡️ Ir para a versão em **Português-BR**](#análise-estratégica-de-receita-dos-planos-da-megaline)
+ 
+> [![VERSÃO PT-BR](https://img.shields.io/badge/🇧🇷%20VERSÃO%20PT--BR-333?style=for-the-badge&logoColor=white)](#analise-estrategica-de-receita-dos-planos-da-megaline)
 
-
-<div align='center'>
-
-# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
-
-</div>
-
-# ADICIONAR
-- Teste de hipóteses
-- Gráficos
-- Acionáveis que dariam para ser utilizados com o que aprendi
-- Próximos passos
-- Gráfico, teste de hipóteses
-
-
+# **Strategic Revenue Analysis of Megaline's Mobile Plans**:<br> A Comparative Study (Surf X Ultimate)
 
 ## 📋 Project Summary
 
@@ -88,43 +57,34 @@ The entire analysis is documented in a **Jupyter Notebook**.
 
 * `megaline_revenue_eda.ipynb`: The complete Jupyter Notebook containing all steps, from data loading and cleaning to analysis, visualization, and statistical conclusions.
 * `README.md`: This summary file.
+* `INDEX.html`: The project page on GitHub pages.
+* `NOTEBOOK.html`: The notebook page on GitHub pages. 
 
 
-### 📝 Note on Data Availability
+## ⏭️ Next Steps
 
-The dataset for this analysis was provided by the TripleTen platform and is proprietary. Therefore, the code in the notebook cannot be run locally without access to the original data files. However, all outputs, tables, and visualizations have been preserved within the notebook for a complete review of the methodology and results.
+* More plots and insightful analysis
 
-<br>
+  
+> ### ℹ️ Note on Data Availability
+>
+> The dataset for this analysis was provided by the TripleTen platform and is proprietary. Therefore, the code in the notebook cannot be run locally without access to the original data files. However, all outputs, tables, and visualizations have been preserved within the notebook for a complete review of the methodology and results.
 
 ---
 
 <div align='center'>
 
-## 🚀 **Explore the Notebook**
+## 🚀 **Explore the Project**
 
-<a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
-[Open in Collab](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing)
-</a>
+[![View Project](https://img.shields.io/badge/View%20Project-a53825?style=for-the-badge&logo=rocket&logoColor=FFFFFF)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
+
+[![View Dashboard](https://img.shields.io/badge/View%20Dashboard-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)](https://example.com) [![Open in Colab](https://img.shields.io/badge/Open%20in%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=FFFFFF)](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing) [![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eduardocornelsen/megaline_revenue_analysis_story)
 
 </div>
 
-<br>
-
-
-
-<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
-[[See on GitHub](https://github.com/eduardocornelsen/megaline-revenue-analysis/blob/main/notebooks/megaline-revenue-eda.ipynb)
-</a>
-
-<br><br>
-
 </details>
 
-<br>
-
----
-
-<br>
+***
 
 <details open>
  <summary>
@@ -133,13 +93,13 @@ The dataset for this analysis was provided by the TripleTen platform and is prop
  
 <br>
 
-> 🇬🇧 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-english-version)
+> [![ENGLISH VERSION](https://img.shields.io/badge/🇺🇸%20ENGLISH%20VERSION-333?style=for-the-badge&logoColor=white)](#strategic-revenue-analysis-of-megalines-mobile-plans)
+> 
+> 🇺🇸 [Go to English version](#strategic-revenue-analysis-of-megalines-mobile-plans-english-version)
 
-<center>
 
-# **Análise Estratégica de Receita dos Planos da Megaline**:<br> Um Estudo Comparativo<br>(🏄🏻‍♂️ Surf X 👑Ultimate)
+# **Análise Estratégica de Receita dos Planos da Megaline**:<br> Um Estudo Comparativo (Surf X Ultimate)
 
-</center>
 
 
 
@@ -169,20 +129,17 @@ Meu processo analítico seguiu estas etapas principais:
 Toda a análise está documentada em um **Jupyter Notebook**.
 
 
-
 ## 📂 Arquivos do Projeto
 
-* `megaline_plan_analysis_portfolio_FINAL_clean.ipynb`: O Jupyter Notebook completo, contendo todas as etapas, desde o carregamento e limpeza dos dados até a análise, visualização e conclusões estatísticas.
+* `megaline_revenue_eda.ipynb`: O Jupyter Notebook completo, contendo todas as etapas, desde o carregamento e limpeza dos dados até a análise, visualização e conclusões estatísticas.
 * `README.md`: Este arquivo de resumo.
+* `INDEX.html`: A página do projeto no GitHub pages.
+* `NOTEBOOK.html`: A visualização do notebook no GitHub pages.
 
+> ### ℹ️ Nota sobre a Disponibilidade dos Dados
+> O conjunto de dados para esta análise foi fornecido pela plataforma TripleTen e é proprietário. Portanto, o código no notebook não pode ser executado localmente sem acesso aos arquivos de dados originais. No entanto, todos os resultados, tabelas e visualizações foram
+> preservados no notebook para uma revisão completa da metodologia e dos resultados.
 
-<div class='info'>
-
-### 📝 Nota sobre a Disponibilidade dos Dados
-
-O conjunto de dados para esta análise foi fornecido pela plataforma TripleTen e é proprietário. Portanto, o código no notebook não pode ser executado localmente sem acesso aos arquivos de dados originais. No entanto, todos os resultados, tabelas e visualizações foram preservados no notebook para uma revisão completa da metodologia e dos resultados.
-
-<br>
 
 ---
 
@@ -190,21 +147,15 @@ O conjunto de dados para esta análise foi fornecido pela plataforma TripleTen e
 
 ## 🚀 **Explore o Notebook**
 
+[![Ver Project](https://img.shields.io/badge/Ver%20Projeto-a53825?style=for-the-badge&logo=rocket&logoColor=FFFFFF)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
-<a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
-Abrir no Collab
-</a>
-
-
-<br>
-
-
-
-<a href="https://eduardocornelsen.github.io/megaline-revenue-analysis/" style="display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-align: center; text-decoration: none; color: #ffffff; background-color: #a74c31; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.3s ease;">
-Ver no GitHub
-</a>
-
-</div>
+[![Ver Dashboard](https://img.shields.io/badge/Ver%20Dashboard-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)](https://example.com) [![Abrir no Colab](https://img.shields.io/badge/Abrir%20no%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=FFFFFF)](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing) [![Ver Código-Fonte](https://img.shields.io/badge/Ver%20Código--Fonte-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eduardocornelsen/megaline_revenue_analysis_story)
 
 </details>
 
+***
+<p align="center">
+Copyright © 2025, Eduardo Cornelsen
+</p>
+
+</div>
