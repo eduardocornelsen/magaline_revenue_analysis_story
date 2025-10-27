@@ -88,7 +88,7 @@ The entire analysis is documented in a **Jupyter Notebook**.
 
 ***
 
-<details open>
+<details>
  <summary>
  <b style="font-size: 1.4em;">2. 🇧🇷 Versão em Português - BR</b>
  </summary>
