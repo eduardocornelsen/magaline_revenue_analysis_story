@@ -1,0 +1,571 @@
+/* --- General Styles & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #f8f9fa;
+    --container-bg: #ffffff;
+    --text-color: #343a40;
+    --heading-color: #212529;
+    --subtitle-color: #6c757d;
+    --primary-color: #20c997;
+    --primary-color-darker: #1a9e7a;
+    --secondary-color: #6c757d;
+    --secondary-color-darker: #5a6268;
+    --success-color: #28a745;
+    --warning-bg: #fff3cd;
+    --warning-border: #ffc107;
+    --warning-text: #856404;
+    --border-color-light: #e9ecef;
+    --border-color-medium: #dee2e6;
+    --border-color-dark: #ced4da;
+    --highlight-bg: #e9f9f5;
+    --code-bg: #e9ecef;
+    --hypothesis-bg: #f1f3f5;
+    --text-light: #ffffff;
+    --accent-blue: #007bff0e;
+    --highlight-blue: #007bff;
+    --index-txt: #007bff;
+    --info-box: #007bff28;
+    --info-highlight: #007bff;
+}
+
+body[data-theme='dark'] {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --heading-color: #20c997;
+    --subtitle-color: #a0a0a0;
+    --primary-color: #20c997;
+    --primary-color-darker: #1a9e7a;
+    --secondary-color: #888;
+    --secondary-color-darker: #aaa;
+    --warning-bg: #332701;
+    --warning-border: #ffc107;
+    --warning-text: #ffebb5;
+    --border-color-light: #2a2a2a;
+    --border-color-medium: #3a3a3a;
+    --border-color-dark: #4a4a4a;
+    --highlight-bg: #2a3b36;
+    --code-bg: #2a2a2a;
+    --hypothesis-bg: #252525;
+    --text-light: #ffffff;
+    --accent-blue: #4dabf744;
+    --highlight-blue: #007bff;
+    --index-txt: #4dabf744;
+    --info-box: #007bff28;
+    --info-highlight: #007bff;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container { max-width: 900px; margin: 40px auto; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
+header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
+header h1 { font-size: 2.5em; font-weight: 700; color: var(--primary-color-darker); margin-bottom: 0px; }
+header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Table of Contents --- */
+.toc-container {
+    background-color: var(--hypothesis-bg); /* A subtle background */
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 20px 30px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-container .content {
+    background-color: transparent;
+}
+
+#toc-title {
+    color: var(--heading-color); /* Use the standard heading color */
+    border-bottom: 2px solid var(--border-color-medium);
+    margin-top: 0; /* Remove extra space */
+}
+
+.toc-list {
+    padding-left: 30px; /* Indent the ordered list numbers */
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.toc-list li:last-child {
+    margin-bottom: 0;
+}
+
+.toc-list a {
+    text-decoration: none;
+    color: var(--index-txt); /* Use the blue variable we created */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.toc-list a:hover {
+    text-decoration: underline;
+    color: var(--primary-color-darker); /* Use the theme's green on hover */
+}
+
+/* Class for banner image */
+
+.image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 0px;
+}
+
+/*.header-gif { max-width: 150px; border-radius: 8px; margin-bottom: 20px; }*/
+.header-divider {
+    /* Removes the default browser border */
+    border: none; 
+    /* Sets the color and thickness of the line */
+    border-top: 1px solid #4d4b4b; /* Use a color that fits your theme, e.g., a light gray */
+    
+    /* ADD SPACE AROUND THE LINE (e.g., 10 pixels top and bottom) */
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+.header-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom:0 px }
+.badges {margin-top: 20px}
+.badges img { margin: 0 5px; }
+.translate-button, .theme-button { background-color: var(--secondary-color); color: var(--text-light); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.icon-container svg { width: 16px; height: 16px; fill: currentColor; }
+.translate-button:hover, .theme-button:hover { background-color: var(--secondary-color-darker); }
+.section { margin-bottom: 35px; }
+h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color-darker); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
+ul.key-findings { list-style: none; padding-left: 0; }
+ul.key-findings li { background-color: var(--highlight-bg); border-left: 4px solid var(--primary-color); padding: 15px; margin-bottom: 10px; border-radius: 5px; font-size: 1.05em; }
+ul.key-findings li strong { color: var(--primary-color-darker); }
+ol li { margin-bottom: 12px; }
+.hypothesis { background-color: var(--hypothesis-bg); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid var(--border-color-dark); }
+.hypothesis p { margin: 5px 0; }
+code { font-family: 'Courier New', Courier, monospace; background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background-color: var(--primary-color); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
+.note { background-color: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 20px; border-radius: 5px; }
+.note h3 { margin-top: 0; color: var(--warning-text); }
+.cta-button { display: inline-block; background-color: var(--primary-color); color: var(--text-light); padding: 12px 25px; text-align: center; text-decoration: none; font-size: 1.1em; font-weight: bold; border-radius: 8px; transition: background-color 0.3s ease, transform 0.2s ease; }
+.cta-button:hover { background-color: var(--primary-color-darker); transform: translateY(-2px); }
+.cta-buttons-container { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+@media (max-width: 768px) { .container { padding: 20px; margin: 0px; } header h1 { font-size: 2em; } h2 { font-size: 1.5em; } .cta-buttons-container { flex-direction: column; } }
+.cta-button-alt {
+    background-color: --primary-color; /* Vibrant violet */
+    color: var(--text-light);      /* White text */
+}
+.cta-button-alt:hover {
+background-color: #7122b9; /* Darker violet for hover */
+}
+
+h4 {
+  margin: 0;
+  /* You can add your own padding if you still want some space */
+  /* padding-top: 5px; */ 
+}
+
+/* FADE-IN SCROLL 
+
+/* 1. The "hidden" state. 
+  We will add this class to our HTML.
+*/
+.reveal-on-scroll {
+  opacity: 0; /* Start invisible */
+  transform: translateY(30px); /* Start 30px lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 2. The "visible" state. 
+  JavaScript will add this class automatically.
+*/
+.reveal-on-scroll.is-visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up to its original spot */
+}
+
+/* --- Back to Top Button --- */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stays in one place */
+  bottom: 25px;
+  right: 25px;
+  z-index: 99; /* Stays on top of other content */
+  
+  /* --- Styling --- */
+  border: none;
+  cursor: pointer;
+  background-color: var(--text-color); /* Uses your theme color */
+  color: var(--bg-color);   /* Uses your theme color */
+  border-radius: 50%; /* Makes it a circle */
+  
+  /* --- Sizing and Centering the Arrow --- */
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem; /* Makes the arrow larger */
+  
+  /* Center the arrow inside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* --- Effects --- */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8; /* Slightly transparent when not hovered */
+}
+
+#backToTopBtn:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+/* --- Info Box (Theme-Aware) --- */
+
+.info-box {
+  /* --- Copied from ul.key-findings li --- */
+  background-color: var(--info-box);
+  border-left: 4px solid var(--info-highlight);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 1.05em;
+  color: var(--text-color);
+  margin-top: 30px;       /* Adds space above the box */
+  
+  /* Add transition for theme toggle */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* --- Conclusion Box (Theme-Aware) --- */
+
+.conclusion-box {
+  /* --- Copied from ul.key-findings li --- */
+  background-color: var(--highlight-bg);
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1.05em;
+  
+  /* --- Added for theme/spacing --- */
+  color: var(--text-color); /* Makes sure text is readable */
+  margin-top: 20px;       /* Adds space above the box */
+  
+  /* Add transition for theme toggle */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- New Title Style for Verdicts --- */
+.verdict-title {
+  /* --- Copied from ul.key-findings li --- */
+  background-color: var(--accent-blue);
+  border-left: 4px solid var(--highlight-blue);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1.05em;
+  
+  /* --- Added for theme/spacing --- */
+  color: var(--text-color); /* Makes sure text is readable */
+  margin-top: 20px;       /* Adds space above the box */
+  
+  /* Add transition for theme toggle */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-link {
+  position: relative; /* Required for the pseudo-element */
+  text-decoration: none; /* Removes the default underline */
+  color: var(--text-color); /* Uses your theme color */
+  padding-bottom: 5px; /* Adds a little space for the line */
+}
+
+/* This is the hidden underline */
+.nav-link::after {
+  content: ''; /* Required for all pseudo-elements */
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  
+  /* Position it at the bottom-center */
+  bottom: 0;
+  left: 0;
+  
+  background-color: var(--heading-color); /* Line color */
+  
+  /* Start at 0% width (invisible) */
+  transform: scaleX(0); 
+  transform-origin: center; /* Makes it grow from the center */
+  
+  /* Animate the 'transform' property */
+  transition: transform 0.3s ease-out;
+}
+
+/* On hover, scale the line to 100% width */
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 5px;                
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.gallery-item {
+    border: 1px solid var(--border-color-medium);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gallery-item p {
+    font-weight: bold;
+    margin-top: 0;
+    color: var(--heading-color);
+    font-size: 1.25em;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.summary-text {
+    text-align: left;
+    margin-top: 15px;
+}
+.summary {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-size: 0.9em;
+    text-align: left;
+}
+.summary li:first-child {
+    font-weight: bold;
+    color: var(--heading-color);
+    font-size: 1.05em;
+}
+.modal-caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 20px;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+}
+#modalSummaryList {
+    list-style: disc;
+    padding-left: 40px; /* More padding for centering */
+    text-align: left;
+    display: inline-block; /* To center the block */
+}
+#modalSummaryList li {
+    margin-bottom: 10px;
+}
+#modalSummaryList li:first-child {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* --- Contact Badges (shields.io) --- */
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--heading-color); 
+}
+
+.contact-badges {
+  display: flex;           /* Lines them up horizontally */
+  justify-content: center; /* Centers them */
+  flex-wrap: wrap;         /* Lets them stack on small screens */
+  gap: 15px;               /* Space between each badge */
+}
+
+
+/* Optional: Add a simple hover effect */
+.contact-badges a img {
+  transition: transform 0.2s ease;
+}
+
+
+.contact-badges a:hover img {
+  transform: scale(1.05); /* Slightly enlarge the badge on hover */
+}
+ 
+
+/* --- ✅ CORRECT CSS --- */
+
+/* 1. This styles the CONTAINER (layout only) */
+.project-links {
+  display: flex;
+  flex-direction: column; /* <-- This is the main change: stacks them vertically */
+  align-items: center;   /* <-- This centers them horizontally in the column */
+  
+  gap: 15px;               /* This now adds vertical space between badges */
+  margin-top: 30px;
+}
+
+/* 2. This targets the INDIVIDUAL BADGES (No change needed here) */
+.project-links a img {
+  transition: transform 0.2s ease;
+}
+
+/* 3. This applies the zoom (No change needed here) */
+.project-links a:hover img {
+  transform: scale(1.05); 
+}
+
+button.collapsible {
+    background-color: var(--container-bg);
+    color: var(--heading-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 10px;
+    border-bottom: 2px solid var(--border-color-light);
+    transition: border-bottom 0.3s ease;
+}
+
+button.collapsible:after {
+    content: '\2795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: var(--text-color);
+    float: right;
+    margin-left: 5px;
+}
+
+button.collapsible.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* --- Collapsible H2 Section Title Styles --- */
+
+/* Makes the h2 clickable and prepares it for the icon */
+/* --- Collapsible H2 Section Title --- */
+
+h2.collapsible {
+    /* --- Base H2 Styles (for the line) --- */
+    border-bottom: 2px solid var(--border-color-light);
+    padding-bottom: 10px; 
+
+    /* --- Collapsible Behavior --- */
+    cursor: pointer;
+    outline: none;
+    position: relative; /* Needed to place the icon */
+
+    /* --- Spacing Fix (Removes space below the line) --- */
+    margin-bottom: 0; 
+}
+
+/* --- Collapsible H2 Icon --- */
+h2.collapsible:after {
+    content: '\2795'; /* "plus" sign */
+    font-size: 0.6em;  /* Makes icon proportional to the h2 size */
+    color: var(--text-color);
+    
+    /* Position the icon on the right side */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Centers it vertically */
+}
+
+/* --- Collapsible H2 Icon (Active) --- */
+h2.collapsible.active:after {
+    content: "\2796"; /* "minus" sign */
+}
+
+
+.content {
+    padding: 20px 0;
+    padding-top: 0;
+    display: none;
+    overflow: hidden;
+    background-color: var(--container-bg);
+}
+
+footer {
+  text-align: center; /* Centers the text */
+  padding: 20px;       /* Adds 20 pixels of space inside the footer */
+  background-color: #121212; /* A light gray background color */
+  color: #696969;          /* A dark gray text color for good contrast */
+  margin-top: 0px;    /* Adds space above the footer to separate it */
+}

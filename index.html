@@ -4,268 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Megaline Plan Revenue Analysis</title>
-    <style>
-        /* --- General Styles & Fonts --- */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-        :root {
-            --bg-color: #f8f9fa;
-            --container-bg: #ffffff;
-            --text-color: #343a40;
-            --heading-color: #212529;
-            --subtitle-color: #6c757d;
-            --primary-color: #20c997;
-            --primary-color-darker: #1a9e7a;
-            --secondary-color: #6c757d;
-            --secondary-color-darker: #5a6268;
-            --success-color: #28a745;
-            --warning-bg: #fff3cd;
-            --warning-border: #ffc107;
-            --warning-text: #856404;
-            --border-color-light: #e9ecef;
-            --border-color-medium: #dee2e6;
-            --border-color-dark: #ced4da;
-            --highlight-bg: #e9f9f5;
-            --code-bg: #e9ecef;
-            --hypothesis-bg: #f1f3f5;
-            --text-light: #ffffff;
-        }
-
-        body[data-theme='dark'] {
-            --bg-color: #121212;
-            --container-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --heading-color: #20c997;
-            --subtitle-color: #a0a0a0;
-            --primary-color: #20c997;
-            --primary-color-darker: #1a9e7a;
-            --secondary-color: #888;
-            --secondary-color-darker: #aaa;
-            --warning-bg: #332701;
-            --warning-border: #ffc107;
-            --warning-text: #ffebb5;
-            --border-color-light: #2a2a2a;
-            --border-color-medium: #3a3a3a;
-            --border-color-dark: #4a4a4a;
-            --highlight-bg: #2a3b36;
-            --code-bg: #2a2a2a;
-            --hypothesis-bg: #252525;
-            --text-light: #ffffff;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container { max-width: 900px; margin: 40px auto; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
-        header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
-        header h1 { font-size: 2.5em; font-weight: 700; color: var(--primary-color-darker); margin-bottom: 0px; }
-        header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
-        
-        /* Class for banner image */
-        
-        .image {
-            width: 100%;
-            max-width: 550px;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 0px;
-        }
-        
-        /*.header-gif { max-width: 150px; border-radius: 8px; margin-bottom: 20px; }*/
-        .header-divider {
-            /* Removes the default browser border */
-            border: none; 
-            /* Sets the color and thickness of the line */
-            border-top: 1px solid #4d4b4b; /* Use a color that fits your theme, e.g., a light gray */
-            
-            /* ADD SPACE AROUND THE LINE (e.g., 10 pixels top and bottom) */
-            margin-top: 10px; 
-            margin-bottom: 10px;
-        }
-        .header-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: px }
-        .badges {margin-top: 20px}
-        .badges img { margin: 0 5px; }
-        .translate-button, .theme-button { background-color: var(--secondary-color); color: var(--text-light); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease; display: flex; align-items: center; gap: 8px; }
-        .icon-container svg { width: 16px; height: 16px; fill: currentColor; }
-        .translate-button:hover, .theme-button:hover { background-color: var(--secondary-color-darker); }
-        .section { margin-bottom: 35px; }
-        h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color-darker); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
-        ul.key-findings { list-style: none; padding-left: 0; }
-        ul.key-findings li { background-color: var(--highlight-bg); border-left: 4px solid var(--primary-color); padding: 15px; margin-bottom: 10px; border-radius: 5px; font-size: 1.05em; }
-        ul.key-findings li strong { color: var(--primary-color-darker); }
-        ol li { margin-bottom: 12px; }
-        .hypothesis { background-color: var(--hypothesis-bg); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid var(--border-color-dark); }
-        .hypothesis p { margin: 5px 0; }
-        code { font-family: 'Courier New', Courier, monospace; background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .tag { background-color: var(--primary-color); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
-        .note { background-color: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 20px; border-radius: 5px; }
-        .note h3 { margin-top: 0; color: var(--warning-text); }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: var(--text-light); padding: 12px 25px; text-align: center; text-decoration: none; font-size: 1.1em; font-weight: bold; border-radius: 8px; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-button:hover { background-color: var(--primary-color-darker); transform: translateY(-2px); }
-        .cta-buttons-container { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-        @media (max-width: 768px) { .container { padding: 20px; margin: 0px; } header h1 { font-size: 2em; } h2 { font-size: 1.5em; } .cta-buttons-container { flex-direction: column; } }
-        .cta-button-alt {
-            background-color: --primary-color:; /* Vibrant violet */
-            color: var(--text-light);      /* White text */
-        }
-        .cta-button-alt:hover {
-        background-color: #7122b9; /* Darker violet for hover */
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .gallery {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-        .gallery-item {
-            border: 1px solid var(--border-color-medium);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .gallery-item p {
-            font-weight: bold;
-            margin-top: 0;
-            color: var(--heading-color);
-        }
-
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            padding-top: 100px; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.9); 
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .summary-text {
-            text-align: left;
-            margin-top: 15px;
-        }
-        .summary {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            color: var(--text-color);
-            font-size: 0.9em;
-            text-align: left;
-        }
-        .summary li:first-child {
-            font-weight: bold;
-            color: var(--heading-color);
-            font-size: 1.05em;
-        }
-        .modal-caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px 20px;
-            width: 80%;
-            max-width: 700px;
-            margin: auto;
-        }
-        #modalSummaryList {
-            list-style: disc;
-            padding-left: 40px; /* More padding for centering */
-            text-align: left;
-            display: inline-block; /* To center the block */
-        }
-        #modalSummaryList li {
-            margin-bottom: 10px;
-        }
-        #modalSummaryList li:first-child {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .collapsible {
-            background-color: var(--container-bg);
-            color: var(--heading-color);
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-top: 10px;
-            border-bottom: 2px solid var(--border-color-light);
-            transition: border-bottom 0.3s ease;
-        }
-
-        .collapsible:after {
-            content: '\2795'; /* Unicode character for "plus" sign (+) */
-            font-size: 13px;
-            color: var(--text-color);
-            float: right;
-            margin-left: 5px;
-        }
-
-        .collapsible.active:after {
-            content: "\2796"; /* Unicode character for "minus" sign (-) */
-        }
-
-        .content {
-            padding: 20px 0;
-            display: none;
-            overflow: hidden;
-            background-color: var(--container-bg);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -286,7 +26,7 @@
             <div class="header-buttons">
 
                 <button id="translateBtn" class="translate-button"><span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-2v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.62-1.23 4.96-3.1 6.39z"/></svg></span>
-                    <span id="translateBtnText">Translate to Portuguese</span></button>
+                    <span id="translateBtnText">Translate to Portuguese 🇧🇷</span></button>
 
                 <button id="themeToggleBtn" class="theme-button"><span id="themeIconContainer" class="icon-container"></span>
                     <span id="themeBtnText">Toggle Theme</span></button>
@@ -294,6 +34,24 @@
 
         </header>
 
+        <nav class="toc-container section">
+                <h2 id="toc-title" class="collapsible active">Table of Contents</h2>
+                
+                <div class="content" style="display: block;"> 
+                    <ol class="toc-list">
+                        <li><a href="#objective-title" class="nav-link" id="toc-link-1">The Bottom Line: Focus on 'Ultimate'</a></li>
+                        <li><a href="#findings-title" class="nav-link" id="toc-link-2">The Story in Three Parts</a></li>
+                        <li><a href="#eda-title" class="nav-link" id="toc-link-3">Let's Break Down the "Why"</a></li>
+                        <li><a href="#hypothesis-title" class="nav-link" id="toc-link-4">Statistical Testing</a></li>
+                        <li><a href="#final-conclusion-title" class="nav-link" id="toc-link-5">Final Story Conclusion</a></li>
+                        <li><a href="#methodology-title" class="nav-link" id="toc-link-6">Our Approach</a></li>
+                        <li><a href="#tech-title" class="nav-link" id="toc-link-7">The Tools We Used</a></li>
+                        <li><a href="#cta-title" class="nav-link" id="toc-link-8">Want to Dig Deeper?</a></li>
+                    </ol>
+                </div>
+            </nav>
+
+        
         <div class="section">
             <h2 id="objective-title">The Bottom Line: Focus on 'Ultimate'</h2>
             <p id="objective-p1">Our analysis shows that while the 'Surf' plan has its moments, the <strong>'Ultimate' plan is the consistent breadwinner.</strong></p>
@@ -309,12 +67,11 @@
             </ul>
         </div>
         
-        <div class="section">
-            <h2 id="eda-title">Let's Break Down the "Why"</h2>
+        <h2 id="eda-title" class="collapsible active">Let's Break Down the "Why"</h2>
+        <div class="content" style="display: block;">
             <p id="eda-1-p">The following charts illustrate the key differences in user behavior and how they translate to revenue.</p>
-        </div>
+       
 
-        <div class="section">
             <button class="collapsible active">Revenue</button>
             <div class="content" style="display: block;">
                 <div class="gallery">
@@ -332,7 +89,7 @@
                         <p id="gallery-title-2">Total Revenue: The Big Picture</p>
                         <img src="assets/images/plan_total_revenue.png" alt="Total Revenue by Plan">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-2">
+                            <ul class="key-findings" id="gallery-summary-2">
                                 <li>When we look at the total revenue, the 'Ultimate' plan's contribution is significantly larger.</li>
                                 <li>This reinforces the idea that 'Ultimate' is the more profitable plan overall.</li>
                             </ul>
@@ -342,7 +99,7 @@
                         <p id="gallery-title-10">A Higher Average Revenue Per User</p>
                         <img src="assets/images/user_mean_revenue_distribution_hist_box.png" alt="User Mean Revenue Distribution">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-10">
+                            <ul class="key-findings" id="gallery-summary-10">
                                 <li>The average revenue from 'Ultimate' users is consistently higher.</li>
                                 <li>This tells us that, on an individual level, 'Ultimate' customers are more valuable.</li>
                             </ul>
@@ -352,7 +109,7 @@
                         <p id="gallery-title-8">A Tighter, More Predictable Revenue Stream</p>
                         <img src="assets/images/monthly_avg_rev_box.png" alt="Monthly Average Revenue Distribution">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-8">
+                            <ul class="key-findings" id="gallery-summary-8">
                                 <li>The revenue from 'Ultimate' users is tightly clustered, indicating a predictable income stream.</li>
                                 <li>'Surf' revenue is all over the place, making it harder to forecast.</li>
                             </ul>
@@ -361,14 +118,14 @@
                 </div>
             </div>
 
-            <button class="collapsible active">Data Usage</button>
+            <button id='data-usage' class="collapsible active">Data Usage</button>
             <div class="content" style="display: block;">
                 <div class="gallery">
                     <div class="gallery-item">
                         <p id="gallery-title-4">'Surf' Users are Hitting Their Data Limits</p>
                         <img src="assets/images/avg_gb_usage_month.png" alt="Average GB Usage per Month">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-4">
+                            <ul class="key-findings" id="gallery-summary-4">
                                 <li>'Surf' users frequently go over their data allowance, which is a double-edged sword.</li>
                                 <li>While it generates overage fees, it also suggests they might be good candidates for an upgrade.</li>
                             </ul>
@@ -378,7 +135,7 @@
                         <p id="gallery-title-9">Data Usage is More Spread Out for 'Surf' Users</p>
                         <img src="assets/images/monthly_gb_usage__box.png" alt="Monthly GB Usage Distribution">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-9">
+                            <ul class="key-findings" id="gallery-summary-9">
                                 <li>The wide range of data usage for 'Surf' users is another sign of unpredictability.</li>
                                 <li>Many are either close to their limit or far beyond it.</li>
                             </ul>
@@ -394,7 +151,7 @@
                         <p id="gallery-title-3">Calling Habits are Similar</p>
                         <img src="assets/images/avg_call_dur_month_line.png" alt="Average Call Duration per Month">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-3">
+                            <ul class="key-findings" id="gallery-summary-3">
                                 <li>There’s no significant difference in how much users of either plan talk on the phone.</li>
                                 <li>This tells us that call behavior isn't a major factor in the revenue difference.</li>
                             </ul>
@@ -404,7 +161,7 @@
                         <p id="gallery-title-7">'Ultimate' Users Send More Messages</p>
                         <img src="assets/images/message_box_alt.png" alt="Messages Distribution">
                         <div class="summary-text">
-                            <ul class="summary" id="gallery-summary-7">
+                            <ul class="key-findings" id="gallery-summary-7">
                                 <li>'Ultimate' users send more messages, likely because their plan includes a much larger allowance.</li>
                                 <li>However, this doesn't translate to a major revenue impact.</li>
                             </ul>
@@ -417,27 +174,24 @@
 
 <!-- INÍCIO DOS RESULTADOS DETALHADOS -->
 
-<div class="section">
-    <!-- Título da Seção -->
-    <h2 id="hypothesis-title">Statistical Testing: Putting the Numbers to the Test</h2>
-    
+<h2 id="hypothesis-title" class="collapsible active">Statistical Testing: Putting the Numbers to the Test</h2>
+<div class="content" style="display: block;">
     <!-- Introdução Narrativa -->
     <p id="hypothesis-intro">After seeing the vivid differences in revenue distributions—the 'Ultimate' plan's tight, reliable earnings versus the 'Surf' plan's chaotic reliance on overage fees—our eyes told one story. But in data science, we can't trust just our eyes. We need to confront the numbers with a definitive statistical challenge.<br><br>
 
     The primary question hanging over our marketing strategy was: <br><b><i>Is the revenue difference we observed between the 'Surf' and 'Ultimate' plans real, or is it just a lucky fluke of sampling?</b></i></p>
-</div>
 
 <!-- INÍCIO DOS RESULTADOS DETALHADOS -->
 
 <div class="section">
-    <h3>1. The Revenue Verdict: The Gap is Real and Stable</h3>
+    <h3 id="revenue-verdict" class="info-box">1. The Revenue Verdict: The Gap is Real and Stable</h3>
     
     <p>We applied a two-sample Welch's t-test ('alpha' = 0.05) to confront the averages:</p>
 
     <!-- PURE HTML TABLE FIX -->
-    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left;">
+    <table style="width: 100%; border-collapse: collapse; margin-top: 40px; margin-bottom: 40px; text-align: left;">
         <thead>
-            <tr style="border-bottom: 2px solid var(--border-color-dark);">
+            <tr style="border-bottom: 2px solid var(--border-color-dark); border-top: 2px solid var(--border-color-dark);">
                 <th style="padding: 10px;">Plan</th>
                 <th style="padding: 10px;">Average Monthly Revenue (x̄)</th>
                 <th style="padding: 10px;">Volatility (σ)</th>
@@ -462,55 +216,64 @@
     <!-- END PURE HTML TABLE -->
 
     <p style="margin-top: 20px;">The test resulted in a <b>p-value essentially equal to zero</b> <i> (approx 2.24e^{-7}).</i></p>
+
+        <div class="conclusion-box">
+            <h4>Conclusion on Revenue:</h4>
+            <ul>
+                <li>✅ We <b>rejected the Null Hypothesis.</b></li>
+                <li>There is <b>overwhelming statistical certainty</b> that the superior profitability of the 'Ultimate' plan is not random. The <b>$0.00$ volatility</b> highlights its financial stability.</li>
+            </ul>
+        </div>
+    </div>
+
     
-    <h4>Conclusion on Revenue:</h4>
-    <ul>
-        <li>✅ We <b>rejected the Null Hypothesis.</b></li>
-        <li>There is <b>overwhelming statistical certainty</b> that the superior profitability of the 'Ultimate' plan is not random. The <b>$0.00$ volatility</b> highlights its financial stability.</li>
-    </ul>
-</div>
+    <h3 class="info-box">2. The Location Verdict: Geography is Not a Factor</h3>
+    <div class="section">    
+        <p>We tested if the high-density <b>NY–NJ metropolitan area</b> generates statistically different revenue compared to all other regions.</p>
 
+        <!-- PURE HTML TABLE FIX (Second Table) -->
+        <table style="width: 100%; border-collapse: collapse; margin-top: 40px; margin-bottom: 40px; text-align: left;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--border-color-dark); border-top: 2px solid var(--border-color-dark);">
+                    <th style="padding: 10px;">Region</th>
+                    <th style="padding: 10px;">Average Monthly Revenue (x̄)</th>
+                    <th style="padding: 10px;">Desvio Padrão (σ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: var(--highlight-bg);">
+                    <td style="padding: 10px;"><b>🗽 NY-NJ</b></td>
+                    <td style="padding: 10px;">$59.53</td>
+                    <td style="padding: 10px;">$32.24</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color-light);">
+                    <td style="padding: 10px;"><b>🌍 Other Regions</b></td>
+                    <td style="padding: 10px;">$61.92</td>
+                    <td style="padding: 10px;">$36.99</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- END PURE HTML TABLE -->
+
+        <p style="margin-top: 20px;">The test returned a <b>p-value of $0.5894</b> (far above $\alpha = 0.05$).</p>
+
+        <div class="conclusion-box">
+            <h4>Conclusion on Location:</h4>
+            <ul>
+                <li>❌ We <b>failed to reject the Null Hypothesis.</b></li>
+                <li>There is <b>no statistical evidence</b> to suggest that average revenue differs based on geography. Marketing efforts should <b>focus solely on plan type.</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="section">
-    <h3>2. The Location Verdict: Geography is Not a Factor</h3>
+    <h2 id="final-conclusion-title">Final Story Conclusion</h2>
+    <p>Our Exploratory Analysis pointed to the differences, but the Hypothesis Test provided the <strong>certainty</strong>.<br><br>By confronting the <strong>Ultimate plan's flawless predictability ($70.00)</strong> against the <strong>Surf plan's high volatility ($57.52)</strong>, the statistical evidence was overwhelming: the <strong>profitability gap is real and highly significant</strong>.
     
-    <p>We tested if the high-density <b>NY–NJ metropolitan area</b> generates statistically different revenue compared to all other regions.</p>
-
-    <!-- PURE HTML TABLE FIX (Second Table) -->
-    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left;">
-        <thead>
-            <tr style="border-bottom: 2px solid var(--border-color-dark);">
-                <th style="padding: 10px;">Region</th>
-                <th style="padding: 10px;">Average Monthly Revenue (x̄)</th>
-                <th style="padding: 10px;">Desvio Padrão (σ)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="background-color: var(--highlight-bg);">
-                <td style="padding: 10px;"><b>🗽 NY-NJ</b></td>
-                <td style="padding: 10px;">$59.53</td>
-                <td style="padding: 10px;">$32.24</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border-color-light);">
-                <td style="padding: 10px;"><b>🌍 Other Regions</b></td>
-                <td style="padding: 10px;">$61.92</td>
-                <td style="padding: 10px;">$36.99</td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- END PURE HTML TABLE -->
-
-    <p style="margin-top: 20px;">The test returned a <b>p-value of $0.5894</b> (far above $\alpha = 0.05$).</p>
-
-    <h4>Conclusion on Location:</h4>
-    <ul>
-        <li>❌ We <b>failed to reject the Null Hypothesis.</b></li>
-        <li>There is <b>no statistical evidence</b> to suggest that average revenue differs based on geography. Marketing efforts should <b>focus solely on plan type.</b></li>
-    </ul>
-</div>
-
-<div class="section">
-    <h3>Final Story Conclusion</h3>
-    <p>Our Exploratory Analysis pointed to the differences, but the Hypothesis Test provided the <strong>certainty</strong>. By confronting the <strong>Ultimate plan's flawless predictability ($70.00)</strong> against the <strong>Surf plan's high volatility ($57.52)</strong>, the statistical evidence was overwhelming: the <strong>profitability gap is real and highly significant</strong>. The mandate is clear: the <strong>Ultimate plan is the financially superior and most stable asset</strong> for Megaline.</p>
+        <div class="conclusion-box">
+            👑 The mandate is clear: the <strong>Ultimate plan is the financially superior and most stable asset</strong> for Megaline.
+        </div>    
+    </p>
 </div>
 
         <div class="section">
@@ -526,15 +289,32 @@
 
         <div class="section">
             <h2 id="tech-title">The Tools We Used</h2>
-            <div class="tech-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">Seaborn</span>
-                <span class="tag">SciPy</span>
-                <span class="tag">Jupyter Notebook</span>
-            </div>
+<div class="tech-badges">
+            <a href="https://www.python.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+            </a>
+            <a href="https://jupyter.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook">
+            </a>
+            <a href="https://pandas.pydata.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+            </a>
+            <a href="https://numpy.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+            </a>
+                <a href="https://scipy.org/" target="_blank">
+                <img src="https://img.shields.io/badge/SciPy-8991EC?style=for-the-badge&logo=scipy&logoColor=white" alt="SciPy">
+            </a>
+            <a href="https://matplotlib.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Matplotlib-3151A2?style=for-the-badge&logo=matplotlib&logoColor=white" alt="Matplotlib">
+            </a>
+            <a href="https://seaborn.pydata.org/" target="_blank">
+                <img src="https://img.shields.io/badge/Seaborn-444876?style=for-the-badge" alt="Seaborn">
+            </a>
+            <a href="https://streamlit.io/" target="_blank">
+                <img src="https://img.shields.io/badge/Streamlit-9f0000?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
+            </a>
+        </div>
         </div>
         
         <div class="section note">
@@ -546,10 +326,42 @@
             <h2 id="cta-title">Want to Dig Deeper?</h2>
             <p id="cta-p">The full analysis, including all the code and step-by-step methodology, is available in the project repository. This is your chance to see the "how" behind the "what."</p>
 
-            <div class="cta-buttons-container">
-                <a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing" class="cta-button cta-button-alt" id="cta-button-notebook">Open in Collab</a>
-                <a href="https://github.com/eduardocornelsen/megaline-revenue-analysis/blob/main/notebooks/megaline-revenue-eda.ipynb" class="cta-button cta-button-alt" id="cta-btn-github">View on GitHub</a>
+            <div class="project-links">
+
+                <a href="https://example.com">
+                <img src="https://img.shields.io/badge/Dashboard-9f0000?style=for-the-badge&logo=streamlit&logoColor=white" alt="Open in Colab">
+                </a>
+                <a href="https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing">
+                <img src="https://img.shields.io/badge/Notebook-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=FFFFFF" alt="Open in Colab">
+                </a>
+                <a href="https://github.com/eduardocornelsen/megaline_revenue_analysis_story">
+                <img src="https://img.shields.io/badge/Source-181717?style=for-the-badge&logo=github&logoColor=white" alt="See Source Code">
+                </a>
             </div>
+
+            <section id="contact">
+            <h2>CONTACT ME</h2>
+            
+                <div class="contact-badges">
+                    
+                    <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" 
+                        alt="Contact me on LinkedIn"/>
+                    </a>
+                    
+                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" 
+                        alt="Contact me on GitHub"/>
+                    </a>
+                    
+                    <a href="mailto:your-email@example.com">
+                    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" 
+                        alt="Contact me by Email"/>
+                    </a>
+                    
+                </div>
+            </section>
+
         </div>
     </div>
 
@@ -561,125 +373,12 @@
         </div>
     </div>
 
-    <script>
-        const translations = {
-            'pt': {
-                'main-title': "Plano Ultimate: O Vencedor Indiscutível em Lucratividade",
-                'subtitle': "Uma análise de 500 clientes da Megaline revela que o plano Ultimate gera mais receita e oferece maior estabilidade, tornando-se o investimento mais inteligente para os esforços de marketing.",
-                'objective-title': "O Resumo: Foco no 'Ultimate'",
-                'objective-p1': "Nossa análise mostra que, embora o plano 'Surf' tenha seus méritos, o <strong>plano 'Ultimate' é o carro-chefe consistente.</strong>",
-                'objective-p2': "Este relatório irá guiá-lo pelo 'porquê' por trás desta conclusão e fornecer os dados para apoiá-la.",
-                'findings-title': "A História em Três Partes",
-                'finding-1': "<strong>O plano 'Ultimate' gera mais dinheiro por usuário.</strong> É um fato simples que forma a base da nossa história.",
-                'finding-2': "<strong>O plano 'Surf' é uma incógnita.</strong> Sua receita é imprevisível, dependendo de clientes que ultrapassam seus limites. Isso o torna uma aposta mais arriscada para uma renda estável.",
-                'finding-3': "<strong>A localização não importa.</strong> Verificamos e não há diferença significativa de receita entre os usuários da área de NY-NJ e outras regiões. A história é a mesma em todos os lugares.",
-                'eda-title': "Vamos Detalhar o 'Porquê'",
-                'eda-1-p': "Os gráficos a seguir ilustram as principais diferenças no comportamento do usuário e como elas se traduzem em receita.",
-                'gallery-title-1': "A Receita do 'Ultimate' é Maior e Mais Consistente",
-                'gallery-summary-1': "<li>O plano 'Ultimate' (em verde) mostra uma liderança clara e consistente na receita mensal.</li><li>A receita do plano 'Surf' é mais irregular, com picos ocasionais de cobranças excedentes.</li>",
-                'gallery-title-2': "Receita Total: O Cenário Geral",
-                'gallery-summary-2': "<li>Quando olhamos para a receita total, a contribuição do plano 'Ultimate' é significativamente maior.</li><li>Isso reforça a ideia de que o 'Ultimate' é o plano mais lucrativo no geral.</li>",
-                'gallery-title-10': "Uma Receita Média por Usuário Mais Alta",
-                'gallery-summary-10': "<li>A receita média dos usuários 'Ultimate' é consistentemente maior.</li><li>Isso nos diz que, em nível individual, os clientes 'Ultimate' são mais valiosos.</li>",
-                'gallery-title-8': "Um Fluxo de Receita Mais Estável e Previsível",
-                'gallery-summary-8': "<li>A receita dos usuários 'Ultimate' está firmemente agrupada, indicando um fluxo de renda previsível.</li><li>A receita do 'Surf' está por toda parte, tornando mais difícil a previsão.</li>",
-                'gallery-title-4': "Usuários 'Surf' Estão Atingindo Seus Limites de Dados",
-                'gallery-summary-4': "<li>Os usuários 'Surf' frequentemente ultrapassam sua franquia de dados, o que é uma faca de dois gumes.</li><li>Embora gere taxas de excedente, também sugere que eles podem ser bons candidatos para um upgrade.</li>",
-                'gallery-title-9': "O Uso de Dados é Mais Disperso para Usuários 'Surf'",
-                'gallery-summary-9': "<li>A ampla gama de uso de dados para usuários 'Surf' é outro sinal de imprevisibilidade.</li><li>Muitos estão próximos do limite ou muito além dele.</li>",
-                'gallery-title-3': "Os Hábitos de Chamada são Semelhantes",
-                'gallery-summary-3': "<li>Não há diferença significativa em quanto os usuários de cada plano falam ao telefone.</li><li>Isso nos diz que o comportamento de chamada não é um fator importante na diferença de receita.</li>",
-                'gallery-title-7': "Usuários 'Ultimate' Enviam Mais Mensagens",
-                'gallery-summary-7': "<li>Os usuários 'Ultimate' enviam mais mensagens, provavelmente porque seu plano inclui uma franquia muito maior.</li><li>No entanto, isso não se traduz em um grande impacto na receita.</li>"
-            }
-        };
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">▲</button>
 
-        const originalTexts = {};
-        let currentLanguage = 'en';
-        const themeIconContainer = document.getElementById('themeIconContainer');
-        const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.64 5.64c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L5.64 5.64zm12.72 12.72c-.39-.39-1.02-.39-1.41 0-.39.39-.39-1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.06-1.06zM5.64 18.36l-1.06-1.06c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.06 1.06c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zM19.42 6.01c.39-.39.39-1.02 0-1.41l-1.06-1.06c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0z"/></svg>`;
-        const moonIcon = `<svg xmlns="http://wwwwww.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>`;
+<script src="script.js"></script>
 
-        function updateTheme(theme) {
-            document.body.setAttribute('data-theme', theme);
-            themeIconContainer.innerHTML = theme === 'dark' ? moonIcon : sunIcon;
-            localStorage.setItem('theme', theme);
-        }
+<footer> <p>Copyright &copy; 2025, Eduardo Cornelsen</p>
+</footer>
 
-        document.getElementById('themeToggleBtn').addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme') || 'light';
-            updateTheme(currentTheme === 'dark' ? 'light' : 'dark');
-        });
-
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            if (lang === 'en') {
-                for (const id in originalTexts) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.innerHTML = originalTexts[id];
-                    }
-                }
-            } else {
-                const translationSet = translations[lang];
-                for (const id in translationSet) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.innerHTML = translationSet[id];
-                    }
-                }
-            }
-        }
-
-        document.getElementById('translateBtn').addEventListener('click', () => {
-            setLanguage(currentLanguage === 'en' ? 'pt' : 'en');
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const allIds = new Set(Object.keys(translations.pt));
-             allIds.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) originalTexts[id] = element.innerHTML;
-            });
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            updateTheme(savedTheme);
-
-            // Modal functionality
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
-            var modalSummaryList = document.getElementById("modalSummaryList");
-            var images = document.querySelectorAll(".gallery-item img");
-            images.forEach(image => {
-                image.onclick = function(){
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                    const summaryList = this.parentElement.querySelector('.summary');
-                    modalSummaryList.innerHTML = summaryList.innerHTML;
-                }
-            });
-
-            var span = document.getElementsByClassName("close")[0];
-
-            span.onclick = function() { 
-                modal.style.display = "none";
-            }
-
-            // Collapsible functionality
-            var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                  this.style.borderBottom = "2px solid var(--border-color-light)";
-                } else {
-                  content.style.display = "block";
-                  this.style.borderBottom = "none";
-                }
-              });
-            }
-        });
-    </script>
 </body>
 </html>
