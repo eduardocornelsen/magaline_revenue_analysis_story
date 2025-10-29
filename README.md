@@ -120,32 +120,54 @@ The entire analysis is documented in a **Jupyter Notebook**.
 # **Análise Estratégica de Receita dos Planos da Megaline**:<br> Um Estudo Comparativo (Surf X Ultimate)
 
 
+### 1. O Veredito da Receita: A Diferença é Real e Estável
+Nós aplicamos um teste t de Welch de duas amostras ('alfa' = 0,05) para confrontar as médias:
 
+| Plano | Receita Média Mensal (x̄) | Volatilidade (σ) | A Conclusão Crucial |
+| :--- | :--- | :--- | :--- |
+| 👑 Ultimate | $70.00 | $0.00 | Receita perfeitamente estável e previsível. |
+| 🏄🏻‍♂️ Surf | $57.52 | $43.47 | Alta volatilidade, altamente dependente de taxas de excedente. |
 
-## 📋 Resumo do Projeto
+O teste resultou em um valor-p essencialmente igual a zero (aprox. 2.24e^{-7}).
 
-Este projeto apresenta uma análise completa dos dados de clientes da **Megaline**, uma operadora de telecomunicações, para determinar qual de seus dois planos pré-pagos — **Surf** ou **Ultimate** — é mais lucrativo. O objetivo principal é fornecer insights baseados em dados que possam orientar a alocação do orçamento de marketing da empresa.
+**Conclusão sobre a Receita:**
+- ✅ Rejeitamos a Hipótese Nula.
+- Há uma certeza estatística esmagadora de que a lucratividade superior do plano 'Ultimate' não é aleatória. A volatilidade de $0.00 destaca sua estabilidade financeira.
 
-A análise foi baseada em um conjunto de dados de 2018 que cobre os padrões de uso de 500 clientes, com foco no consumo de chamadas, mensagens e internet. O processo incluiu limpeza de dados, engenharia de features, análise exploratória e testes de hipóteses estatísticas para comparar as fontes de receita de ambos os planos.
+### 2. O Veredito da Localização: Geografia Não é um Fator
+Testamos se a área metropolitana de alta densidade de NY–NJ gera receita estatisticamente diferente em comparação com todas as outras regiões.
 
+| Região | Receita Média Mensal (x̄) | Desvio Padrão (σ) |
+| :--- | :--- | :--- |
+| 🗽 NY-NJ | $59.53 | $32.24 |
+| 🌍 Outras Regiões | $61.92 | $36.99 |
 
-## 💡 Principais Descobertas e Insights de Negócio
+O teste retornou um valor-p de $0.5894 (muito acima de $lpha = 0.05$).
 
-* **Receita Média Superior:** O plano **'Ultimate'** gera consistentemente uma maior receita média por usuário (ARPU).
-* **Volatilidade da Receita:** A receita do plano **'Surf'** é mais imprevisível, impulsionada principalmente por clientes que frequentemente excedem os limites do plano e incorrem em cobranças de excedentes significativas.
-* **Sem Impacto Regional:** Os testes estatísticos não mostraram diferença significativa na receita gerada por usuários da área metropolitana de NY–NJ em comparação com os de outras regiões.
-* **Recomendação Prática:** Para maximizar a receita e garantir previsibilidade, os esforços de marketing devem se concentrar na promoção do plano **'Ultimate'** para atrair e reter clientes de alto valor.
+**Conclusão sobre a Localização:**
+- ❌ Falhamos em rejeitar a Hipótese Nula.
+- Não há evidência estatística que sugira que a receita média difere com base na geografia. Os esforços de marketing devem se concentrar exclusivamente no tipo de plano.
 
+### Conclusão Final da História
+Nossa Análise Exploratória apontou as diferenças, mas o Teste de Hipótese forneceu a certeza. Ao confrontar a previsibilidade impecável do plano Ultimate ($70.00) com a alta volatilidade do plano Surf ($57.52), a evidência estatística foi esmagadora: a diferença de lucratividade é real e altamente significativa. A diretriz é clara: o plano Ultimate é o ativo financeiramente superior e mais estável para a Megaline.
 
-## 🛠️ Abordagem Técnica e Ferramentas
+### Nossa Abordagem
+- **Limpeza de Dados:** Começamos limpando e preparando os dados brutos para garantir a precisão.
+- **Engenharia de Atributos:** Criamos novos atributos, como receita mensal por usuário, para obter uma imagem mais clara dos dados.
+- **Análise Exploratória de Dados (AED):** Usamos visualizações para explorar os dados e descobrir a história.
+- **Teste Estatístico:** Usamos testes de hipóteses para confirmar nossas descobertas e garantir que não fossem apenas por acaso.
 
-Meu processo analítico seguiu estas etapas principais:
-* **Tratamento e Pré-processamento de Dados:** Limpeza e transformação dos dados brutos de uso utilizando **Python**, **Pandas** e **NumPy**.
-* **Engenharia de Features:** Criação de novas variáveis, como a receita mensal por usuário, agregando dados de chamadas, mensagens e internet em um único dataset coeso.
-* **Análise Exploratória de Dados (AED):** Geração de visualizações com **Matplotlib** e **Seaborn** para descobrir tendências no comportamento do usuário e na distribuição de receita.
-* **Testes Estatísticos:** Condução de testes de hipóteses formais com a biblioteca **SciPy** para validar estatisticamente as diferenças de receita entre os planos.
+### As Ferramentas que Usamos
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+- Jupyter Notebook
 
-Toda a análise está documentada em um **Jupyter Notebook**.
+### Uma Nota sobre os Dados
+Este projeto foi concluído com conjuntos de dados proprietários. Embora o notebook não seja executável diretamente, o repositório contém todo o código e visualizações para uma revisão completa da análise.
 
 
 ## 📂 Arquivos do Projeto
@@ -168,6 +190,8 @@ Toda a análise está documentada em um **Jupyter Notebook**.
 
 
 ---
+### Quer se Aprofundar?
+A análise completa, incluindo todo o código e a metodologia passo a passo, está disponível no repositório do projeto. Esta é a sua chance de ver o "como" por trás do "o quê".
 
 <div align='center'>
 
@@ -183,5 +207,3 @@ Toda a análise está documentada em um **Jupyter Notebook**.
 <p align="center">
 Copyright © 2025, Eduardo Cornelsen
 </p>
-
-</div>
