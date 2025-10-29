@@ -39,9 +39,27 @@ const translations = {
         'toc-link-8': "Quer Ir Mais Fundo?",
         'translateBtnText': "Translate to English 🇺🇸",
         'hypothesis-title': "Testes Estatísticos: Validando os Dados",
-        'hypothesis-intro': "",
+        'hypothesis-intro': "Depois de ver as diferenças nítidas nas distribuições de receita — os ganhos consistentes e confiáveis do plano 'Ultimate' versus a dependência caótica do plano 'Surf' em taxas de excedente — nossa intuição contava uma história. Mas em ciência de dados, não podemos confiar apenas na intuição. Precisamos confrontar os números com um desafio estatístico definitivo.<br><br>A principal questão que pairava sobre nossa estratégia de marketing era: <br><b><i>A diferença de receita que observamos entre os planos 'Surf' e 'Ultimate' é real ou é apenas um acaso de amostragem?</b></i>",
+        'revenue-verdict': "1. O Veredito da Receita: A Diferença é Real e Estável",
+        'location-verdict': "2. O Veredito da Localização: Geografia Não é um Fator",
+        'conclusion-revenue-h4': "Conclusão sobre a Receita:",
+        'conclusion-revenue-ul': "<li>✅ <b>Rejeitamos a Hipótese Nula.</b></li><li>Há <b>certeza estatística esmagadora</b> de que a lucratividade superior do plano 'Ultimate' não é aleatória. A volatilidade de <b>$0.00</b> destaca sua estabilidade financeira.</li>",
+        'conclusion-location-h4': "Conclusão sobre a Localização:",
+        'conclusion-location-ul': "<li>❌ <b>Não conseguimos rejeitar a Hipótese Nula.</b></li><li><b>Não há evidência estatística</b> que sugira que a receita média difere com base na geografia. Os esforços de marketing devem <b>focar exclusivamente no tipo de plano.</b></li>",
+        'final-conclusion-title': "Conclusão Final da História",
+        'final-conclusion-p': `Nossa Análise Exploratória apontou as diferenças, mas o Teste de Hipótese forneceu a <strong>certeza</strong>.<br><br>Ao confrontar a <strong>previsibilidade impecável do plano Ultimate (US$ 70,00)</strong> com a <strong>alta volatilidade do plano Surf (US$ 57,52)</strong>, a evidência estatística foi esmagadora: a <strong>diferença de lucratividade é real e altamente significativa</strong>. <div class=\"conclusion-box\"> 👑 O mandato é claro: o <strong>plano Ultimate é o ativo financeiramente superior e mais estável</strong> para a Megaline. </div>`,
+        'methodology-title': "Nossa Abordagem",
+        'method-1': "<strong>Limpeza de Dados:</strong> Começamos limpando e preparando os dados brutos para garantir a precisão.",
+        'method-2': "<strong>Engenharia de Atributos:</strong> Criamos novos atributos, como a receita mensal por usuário, para obter uma imagem mais clara dos dados.",
+        'method-3': "<strong>Análise Exploratória de Dados (AED):</strong> Usamos visualizações para explorar os dados e descobrir a história.",
+        'method-4': "<strong>Teste Estatístico:</strong> Usamos testes de hipóteses para confirmar nossas descobertas e garantir que não fossem apenas por acaso.",
+        'tech-title': "As Ferramentas que Usamos",
+        'reproducibility-title': "Uma Nota sobre os Dados",
+        'reproducibility-p': "Este projeto foi concluído usando conjuntos de dados proprietários. Embora o notebook não seja diretamente executável, o repositório contém todo o código e as visualizações para uma revisão completa da análise.",
+        'cta-title': "Quer Ir Mais Fundo?",
+        'cta-p': "A análise completa, incluindo todo o código e a metodologia passo a passo, está disponível no repositório do projeto. Esta é a sua chance de ver o \"como\" por trás do \"o quê\".",
+        'contact-title': "CONTATE-ME",
         'data-usage': "Uso de Dados"
-    /* ---------------------------------- */
     }
 };
 
