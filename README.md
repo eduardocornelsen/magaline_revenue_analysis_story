@@ -11,7 +11,6 @@ This project provides a **detailed, comparative revenue analysis** of Megaline's
 
 [![View Project](https://img.shields.io/badge/View%20Project-a53825?style=for-the-badge&logo=rocket&logoColor=FFFFFF)](https://eduardocornelsen.github.io/megaline_revenue_analysis_story/)
 
-[![View Dashboard](https://img.shields.io/badge/View%20Dashboard-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)](https://example.com) [![Open in Colab](https://img.shields.io/badge/Open%20in%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=FFFFFF)](https://colab.research.google.com/drive/1Sy64mFffPI-nRyfE1DZvz-5qeMy58dj2?usp=sharing) [![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eduardocornelsen/megaline_revenue_analysis_story)
 
 </div>
 
