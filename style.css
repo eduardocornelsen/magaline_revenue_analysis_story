@@ -111,14 +111,14 @@ html {
 
 .toc-list a {
     text-decoration: none;
-    color: var(--index-txt); /* Use the blue variable we created */
+    color: var(--primary-color-darker); /* Use the blue variable we created */
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .toc-list a:hover {
     text-decoration: underline;
-    color: var(--primary-color-darker); /* Use the theme's green on hover */
+    color: var(--primary-color); /* Use the theme's green on hover */
 }
 
 /* Class for banner image */
