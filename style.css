@@ -146,6 +146,85 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --- Table of Contents --- */
+.toc-container {
+    background-color: var(--hypothesis-bg); /* A subtle background */
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 20px 30px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-container .content {
+    background-color: transparent;
+}
+
+#toc-title {
+    color: var(--heading-color); /* Use the standard heading color */
+    border-bottom: 2px solid var(--border-color-medium);
+    margin-top: 0; /* Remove extra space */
+}
+
+.toc-container .toc-list {
+    padding-left: 30px; /* Indent the ordered list numbers */
+    margin: 0;
+    display: block; /* Override header nav style */
+}
+
+.toc-container .toc-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.toc-container .toc-list li:last-child {
+    margin-bottom: 0;
+}
+
+.toc-container .toc-list a {
+    text-decoration: none;
+    color: var(--primary-color-darker); /* Use the blue variable we created */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.toc-container .toc-list a:hover {
+    text-decoration: underline;
+    color: var(--primary-color); /* Use the theme's green on hover */
+}
+
+.nav-link {
+  position: relative; /* Required for the pseudo-element */
+  text-decoration: none; /* Removes the default underline */
+  color: var(--text-color); /* Uses your theme color */
+  padding-bottom: 5px; /* Adds a little space for the line */
+}
+
+/* This is the hidden underline */
+.nav-link::after {
+  content: ''; /* Required for all pseudo-elements */
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  
+  /* Position it at the bottom-center */
+  bottom: 0;
+  left: 0;
+  
+  background-color: var(--heading-color); /* Line color */
+  
+  /* Start at 0% width (invisible) */
+  transform: scaleX(0); 
+  transform-origin: center; /* Makes it grow from the center */
+  
+  /* Animate the 'transform' property */
+  transition: transform 0.3s ease-out;
+}
+
+/* On hover, scale the line to 100% width */
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
 /* Old .toc-container styles removed */
 
 .image {
@@ -154,6 +233,12 @@ html {
     height: auto;
     border-radius: 8px;
     margin-top: 0px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.image:hover {
+    filter: grayscale(0%);
 }
 
 /*.header-gif { max-width: 150px; border-radius: 8px; margin-bottom: 20px; }*/
