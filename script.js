@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add the class and observe the elements
-    document.querySelectorAll('.section, .collapsible, .gallery-item, .info-box, .conclusion-box').forEach(element => {
+    document.querySelectorAll('.section, .collapsible, .gallery-item, .info-box, .conclusion-box, .project-showcase').forEach(element => {
         element.classList.add('reveal-on-scroll');
         revealObserver.observe(element);
     });
