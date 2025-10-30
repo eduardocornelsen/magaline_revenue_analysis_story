@@ -59,7 +59,8 @@ const translations = {
         'cta-title': "Quer Ir Mais Fundo?",
         'cta-p': "A análise completa, incluindo todo o código e a metodologia passo a passo, está disponível no repositório do projeto. Esta é a sua chance de ver o \"como\" por trás do \"o quê\".",
         'contact-title': "CONTATE-ME",
-        'data-usage': "Uso de Dados"
+        'data-usage': "Uso de Dados",
+        'title': "Projeto 1: Análise de Receita dos Planos da Megaline",
     }
 };
 
@@ -67,7 +68,7 @@ const originalTexts = {};
 let currentLanguage = 'en';
 const themeIconContainer = document.getElementById('themeIconContainer');
 const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.64 5.64c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L5.64 5.64zm12.72 12.72c-.39-.39-1.02-.39-1.41 0-.39.39-.39-1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.06-1.06zM5.64 18.36l-1.06-1.06c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.06 1.06c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zM19.42 6.01c.39-.39.39-1.02 0-1.41l-1.06-1.06c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0z"/></svg>`;
-const moonIcon = `<svg xmlns="http://wwwwww.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>`;
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>`;
 
 function updateTheme(theme) {
     document.body.setAttribute('data-theme', theme);
@@ -176,5 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
         this.style.borderBottom = "none";
         }
     });
+    }
+
+    // Menu toggle functionality
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const headerNav = document.querySelector('.header-nav');
+    if (menuToggleBtn && headerNav) {
+        menuToggleBtn.addEventListener('click', () => {
+            headerNav.classList.toggle('show-nav');
+        });
     }
 });

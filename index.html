@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header id="main-header">
+        <div class="header-title">
+            <a href="#" id='title' >Project 1: Megaline Plan Revenue Analysis</a>
+        </div>
+        <nav class="header-nav">
+            <ol>
+                <li><a href="#objective-title">The Bottom Line</a></li>
+                <li><a href="#findings-title">The Story</a></li>
+                <li><a href="#eda-title">The "Why"</a></li>
+                <li><a href="#hypothesis-title">Testing</a></li>
+                <li><a href="#final-conclusion-title">Conclusion</a></li>
+            </ol>
+        </nav>
+        <div class="header-actions">
+            <button id="themeToggleBtn" class="theme-button"><span id="themeIconContainer" class="icon-container"></span></button>
+            <button id="menuToggleBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
 <div class="container">
         <header>
@@ -28,28 +50,9 @@
                 <button id="translateBtn" class="translate-button"><span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-2v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.62-1.23 4.96-3.1 6.39z"/></svg></span>
                     <span id="translateBtnText">Translate to Portuguese 🇧🇷</span></button>
 
-                <button id="themeToggleBtn" class="theme-button"><span id="themeIconContainer" class="icon-container"></span>
-                    <span id="themeBtnText">Toggle Theme</span></button>
             </div>            
 
         </header>
-
-        <nav class="toc-container section">
-                <h2 id="toc-title" class="collapsible active">Table of Contents</h2>
-                
-                <div class="content" style="display: block;"> 
-                    <ol class="toc-list">
-                        <li><a href="#objective-title" class="nav-link" id="toc-link-1">The Bottom Line: Focus on 'Ultimate'</a></li>
-                        <li><a href="#findings-title" class="nav-link" id="toc-link-2">The Story in Three Parts</a></li>
-                        <li><a href="#eda-title" class="nav-link" id="toc-link-3">Let's Break Down the "Why"</a></li>
-                        <li><a href="#hypothesis-title" class="nav-link" id="toc-link-4">Statistical Testing</a></li>
-                        <li><a href="#final-conclusion-title" class="nav-link" id="toc-link-5">Final Story Conclusion</a></li>
-                        <li><a href="#methodology-title" class="nav-link" id="toc-link-6">Our Approach</a></li>
-                        <li><a href="#tech-title" class="nav-link" id="toc-link-7">The Tools We Used</a></li>
-                        <li><a href="#cta-title" class="nav-link" id="toc-link-8">Want to Dig Deeper?</a></li>
-                    </ol>
-                </div>
-            </nav>
 
         
         <div class="section">
@@ -339,7 +342,23 @@
                 </a>
             </div>
 
-            <section id="contact">
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="modal-caption">
+            <ul id="modalSummaryList"></ul>
+        </div>
+    </div>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">▲</button>
+
+<script src="script.js"></script>
+
+<footer> 
+    <section id="contact">
             <h2 id="contact-title">CONTACT ME</h2>
             
                 <div class="contact-badges">
@@ -361,23 +380,8 @@
                     
                 </div>
             </section>
-
-        </div>
-    </div>
-
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="modalCaption" class="modal-caption">
-            <ul id="modalSummaryList"></ul>
-        </div>
-    </div>
-
-<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">▲</button>
-
-<script src="script.js"></script>
-
-<footer> <p>Copyright &copy; 2025, Eduardo Cornelsen</p>
+            
+    <p>Copyright &copy; 2025, Eduardo Cornelsen</p>
 </footer>
 
 </body>

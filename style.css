@@ -63,65 +63,90 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    padding: 0; /* Removed padding */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container { max-width: 900px; margin: 40px auto; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
-header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
-header h1 { font-size: 2.5em; font-weight: 700; color: var(--primary-color-darker); margin-bottom: 0px; }
-header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
+#main-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--container-bg);
+    border-bottom: 1px solid var(--border-color-light);
+    z-index: 1000 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-title a {
+    color: var(--heading-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: var(--primary-color);
+}
+
+#menuToggleBtn {
+    display: none; /* Hidden on desktop */
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#menuToggleBtn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container { position: relative; max-width: 900px; margin: 100px auto 40px; background: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color-light); transition: background-color 0.3s ease, border-color 0.3s ease; }
+.container header { text-align: center; border-bottom: 2px solid var(--border-color-medium); padding-bottom: 25px; margin-bottom: 30px; }
+.container header h1 { font-size: 2.5em; font-weight: 700; color: var(--primary-color-darker); margin-bottom: 0px; }
+.container header p.subtitle { font-size: 1.2em; color: var(--subtitle-color); font-style: italic; max-width: 700px; margin: 0 auto 20px auto; }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* --- Table of Contents --- */
-.toc-container {
-    background-color: var(--hypothesis-bg); /* A subtle background */
-    border: 1px solid var(--border-color-light);
-    border-radius: 8px;
-    padding: 20px 30px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.toc-container .content {
-    background-color: transparent;
-}
-
-#toc-title {
-    color: var(--heading-color); /* Use the standard heading color */
-    border-bottom: 2px solid var(--border-color-medium);
-    margin-top: 0; /* Remove extra space */
-}
-
-.toc-list {
-    padding-left: 30px; /* Indent the ordered list numbers */
-    margin: 0;
-}
-
-.toc-list li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
-.toc-list li:last-child {
-    margin-bottom: 0;
-}
-
-.toc-list a {
-    text-decoration: none;
-    color: var(--primary-color-darker); /* Use the blue variable we created */
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.toc-list a:hover {
-    text-decoration: underline;
-    color: var(--primary-color); /* Use the theme's green on hover */
-}
-
-/* Class for banner image */
+/* Old .toc-container styles removed */
 
 .image {
     width: 100%;
@@ -145,9 +170,33 @@ html {
 .header-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom:0 px }
 .badges {margin-top: 20px}
 .badges img { margin: 0 5px; }
-.translate-button, .theme-button { background-color: var(--secondary-color); color: var(--text-light); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.translate-button { background-color: var(--secondary-color); color: var(--text-light); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.theme-button {
+    position: relative;
+    top: auto;
+    right: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
 .icon-container svg { width: 16px; height: 16px; fill: currentColor; }
-.translate-button:hover, .theme-button:hover { background-color: var(--secondary-color-darker); }
+.translate-button:hover { background-color: var(--secondary-color-darker); }
+.theme-button:hover { 
+    background-color: var(--code-bg); 
+}
+
+.theme-button .icon-container svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+
 .section { margin-bottom: 35px; }
 h2 { font-size: 1.8em; font-weight: 700; color: var(--primary-color-darker); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; margin-bottom: 20px; }
 ul.key-findings { list-style: none; padding-left: 0; }
@@ -287,38 +336,7 @@ h4 {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.nav-link {
-  position: relative; /* Required for the pseudo-element */
-  text-decoration: none; /* Removes the default underline */
-  color: var(--text-color); /* Uses your theme color */
-  padding-bottom: 5px; /* Adds a little space for the line */
-}
-
-/* This is the hidden underline */
-.nav-link::after {
-  content: ''; /* Required for all pseudo-elements */
-  position: absolute;
-  width: 100%;
-  height: 2px; /* Thickness of the line */
-  
-  /* Position it at the bottom-center */
-  bottom: 0;
-  left: 0;
-  
-  background-color: var(--heading-color); /* Line color */
-  
-  /* Start at 0% width (invisible) */
-  transform: scaleX(0); 
-  transform-origin: center; /* Makes it grow from the center */
-  
-  /* Animate the 'transform' property */
-  transition: transform 0.3s ease-out;
-}
-
-/* On hover, scale the line to 100% width */
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
+/* Old .nav-link styles removed */
 
 .tech-badges {
     display: flex;
@@ -488,6 +506,7 @@ h4 {
   transform: scale(1.05); 
 }
 
+
 button.collapsible {
     background-color: var(--container-bg);
     color: var(--heading-color);
@@ -568,4 +587,48 @@ footer {
   background-color: #121212; /* A light gray background color */
   color: #696969;          /* A dark gray text color for good contrast */
   margin-top: 0px;    /* Adds space above the footer to separate it */
+}
+
+@media (max-width: 768px) {
+    #menuToggleBtn {
+        display: flex;
+    }
+
+    .header-nav {
+        display: none;
+        position: absolute;
+        top: 60px; /* Height of the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--container-bg);
+        border-bottom: 1px solid var(--border-color-light);
+    }
+
+    .header-nav.show-nav {
+        display: block;
+    }
+
+    .header-nav ol {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 0;
+    }
+
+    .header-nav li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color-light);
+    }
+
+    .header-nav li:last-child {
+        border-bottom: none;
+    }
+
+    #main-header {
+        padding: 0 15px;
+    }
+
+    .container {
+        margin: 80px auto 20px;
+        padding: 20px;
+    }
 }
